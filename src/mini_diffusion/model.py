@@ -30,7 +30,7 @@ class ConvBlock(nn.Module):
     def __init__(self, in_ch, out_ch, time_emb_dim):
         super().__init__()
         self.conv = nn.Sequential(
-            nn.Conv2d(in_ch, out_ch, 3, padding=1),
+            nn.Conv2d(in_ch, out_ch, 3,padding=1),
             nn.GroupNorm(8, out_ch),
             nn.ReLU(),
         )
@@ -53,12 +53,11 @@ class Down(nn.Module):
         x = self.block(x, t)
         return self.pool(x), x
 
-
 class Up(nn.Module):
-    def __init__(self, in_ch, out_ch, time_emb_dim):
+    def __init__(self, in_ch, skip_ch, out_ch, time_emb_dim):
         super().__init__()
         self.up = nn.ConvTranspose2d(in_ch, out_ch, 2, stride=2)
-        self.block = ConvBlock(in_ch, out_ch, time_emb_dim)
+        self.block = ConvBlock(out_ch + skip_ch, out_ch, time_emb_dim)
 
     def forward(self, x, skip, t):
         x = self.up(x)
@@ -81,8 +80,9 @@ class UNet(nn.Module):
         self.bottleneck = ConvBlock(
             base_channels * 4, base_channels * 4, time_dim)
 
-        self.up1 = Up(base_channels * 4, base_channels * 2, time_dim)
-        self.up2 = Up(base_channels * 2, base_channels, time_dim)
+        self.up1 = Up(256, 256, 128, time_dim)
+        self.up2 = Up(128, 128, 64, time_dim)
+
 
         self.final_conv = nn.Conv2d(base_channels, in_channels, 1)
 
@@ -90,13 +90,21 @@ class UNet(nn.Module):
         t = self.time_embedding(t)
 
         x = self.init_conv(x, t)
+        # print("after init:", x.shape)
 
         x1, skip1 = self.down1(x, t)
+        # print("after down1:", x1.shape, "skip1:", skip1.shape)
+
         x2, skip2 = self.down2(x1, t)
+        # print("after down2:", x2.shape, "skip2:", skip2.shape)
 
         x = self.bottleneck(x2, t)
+        # print("after bottleneck:", x.shape)
 
         x = self.up1(x, skip2, t)
+        # print("after up1:", x.shape)
+
         x = self.up2(x, skip1, t)
+        # print("after up2:", x.shape)
 
         return self.final_conv(x)
