@@ -4,14 +4,17 @@ version = "0.1.0"
 description = "Minimal Diffusion Model full dev"
 readme = "README.md"
 authors = [{name="Shubham"},]
-requires-python = ">=3.13"
+requires-python = ">=3.11"
 dependencies = [
     "torch",
     "torchvision",
     "numpy",
     "pydantic",
     "pyyaml",
-    "tqdm"
+    "tqdm",
+    "uvicorn",
+    "fastapi"
+
 ]
 
 

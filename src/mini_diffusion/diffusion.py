@@ -37,7 +37,7 @@ class Diffusion(nn.Module):
         # shape if x is = B,Color,T,T
         B,C,H,W = x.shape
         
-        assert self.device == x.device , f"The device of the x is {x.device} and the Model is {self.device} which is different different"
+        # assert self.device == x.device , f"The device of the x is {x.device} and the Model is {self.device} which is different different"
         sqrt_alpha_hat = torch.sqrt(self.alpha_hat[t])[:,None,None,None] #type: ignore
         
         one_minus_alpha = torch.sqrt(1-self.alpha_hat[t])[:,None,None,None] #type: ignore

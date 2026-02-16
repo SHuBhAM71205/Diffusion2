@@ -12,7 +12,7 @@ def main():
     parser.add_argument("mode", choices=["train", "sample", "serve"])
     
     path_group = parser.add_argument_group("Paths")
-    path_group.add_argument("--config", type=str, default="./config/base.yaml", help="Path to config file")
+    path_group.add_argument("--config", type=str, default="./configs/base.yaml", help="Path to config file")
     args = parser.parse_args()
     
     config:Config = load_config(args.config)

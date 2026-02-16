@@ -25,7 +25,7 @@ def sample(config:Config| None = None):
 
     unet = UNet(in_channels=3)
     try:
-        chkpt = torch.load(model_path, map_location=device)
+        chkpt = torch.load(model_path, weights_only=False,map_location=device)
         
         if isinstance(chkpt,nn.Module):
             unet = chkpt.to(device)
@@ -82,3 +82,4 @@ if __name__ == "__main__":
     
     config = load_config(args.config)
     sample(config)
+    
