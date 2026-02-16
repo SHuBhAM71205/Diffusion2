@@ -2,6 +2,8 @@ import torch
 from torchvision.transforms import v2
 import math
 import torch.nn as nn
+
+import argparse
 from mini_diffusion.config import load_config, Config
 from mini_diffusion.model import UNet
 from mini_diffusion.diffusion import Diffusion
@@ -11,14 +13,14 @@ import numpy as np
 from PIL import Image
 import io
 
-def sample(): 
-    model_path="./saves/a.pth"
+def sample(config:Config| None = None):
 
-    config = load_config("./configs/base.yaml")
-
-    config = load_config("./config/base.yaml")
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-
+    if config is None:
+        config = load_config("./configs/base.yaml")
+        
+    model_path=config.inference.model_path
+    device = config.inference.device if torch.cuda.is_available() else "cpu"
+    img_dim = config.model.image_size
     print(f"Using device: {device}")
 
     unet = UNet(in_channels=3)
@@ -43,8 +45,8 @@ def sample():
         [
             v2.ToImage(),
             v2.Lambda(lambda x: x[:3] if x.shape[0] == 3 else x[:3].repeat(3//x.shape[0],1,1)),
-            v2.Resize((256,256)),
-            v2.CenterCrop(256),
+            v2.Resize((img_dim,img_dim)),
+            v2.CenterCrop(img_dim),
             v2.ToDtype(torch.float32,scale=True),
             v2.Normalize([0.5,0.5,0.5],[0.5,0.5,0.5])
         ]
@@ -55,7 +57,7 @@ def sample():
 
     unet.eval()
     with torch.inference_mode() , torch.no_grad():
-        x_t = torch.randn(size=(1,3,256,256)).to(device)
+        x_t = torch.randn(size=(1,3,img_dim,img_dim)).to(device)
         for i in reversed(range(config.diffusion.timesteps)):
             x_t = 1/math.sqrt(diffusion.alpha[i]) * (x_t - ((1-diffusion.alpha[i])/torch.sqrt(1-diffusion.alpha_hat[i]))* unet(x_t,torch.Tensor([i,]).to(device))) #type:ignore
             
@@ -72,4 +74,11 @@ def sample():
         return buf.getvalue()
         
 if __name__ == "__main__":
-    sample()
+    parser = argparse.ArgumentParser()
+    
+    path_group = parser.add_argument_group("Paths")
+    path_group.add_argument("--config", type=str, default="./config/base.yaml", help="Path to config file")
+    args = parser.parse_args()
+    
+    config = load_config(args.config)
+    sample(config)

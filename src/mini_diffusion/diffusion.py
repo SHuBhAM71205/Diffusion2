@@ -9,6 +9,7 @@ config = load_config("./configs/base.yaml")
 class Diffusion(nn.Module):
 
     def __init__(self, config: Config,device = "cpu"):
+        
         super().__init__()
         self.config = config.diffusion
         self.device = torch.device(device)

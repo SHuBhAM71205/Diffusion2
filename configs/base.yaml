@@ -1,5 +1,5 @@
 model:
-  image_size: 28
+  image_size: 256
   in_channels: 1
   base_channels: 64
 
@@ -9,7 +9,19 @@ diffusion:
   beta_end: 0.02
 
 training:
-  batch_size: 64
-  epochs: 10
+  batch_size: 10
+  epochs: 2
   learning_rate: 1e-4
   device: "cuda"
+  data_dir: "./data"
+  save_path: "./saves"
+  num_workers: 2
+
+inference:
+  model_path: "./saves/a.pth"
+  device: "cuda"
+
+api:
+  host: "localhost"
+  port: 8000
+  reload: True

@@ -21,18 +21,25 @@ class TrainingConfig(BaseModel):
     epochs: int
     learning_rate: float
     device: str
+    data_dir:str
+    save_path:str
+    num_workers:int
+    
 
-
+class InferenceConfig(BaseModel):
+    model_path: str
+    device: str
     
 class Config(BaseModel):
     model: ModelConfig
     diffusion: DiffusionConfig
     training: TrainingConfig
+    inference: InferenceConfig
 
 
 def load_config(path:str)->Config:
     
-    with open("./configs/base.yaml","r") as f:
+    with open(path,"r") as f:
         data = yaml.safe_load(f)
     return Config(** data)
     
