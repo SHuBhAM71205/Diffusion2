@@ -13,8 +13,7 @@ dependencies = [
     "pyyaml",
     "tqdm",
     "uvicorn",
-    "fastapi"
-
+    "fastapi",
 ]
 
 

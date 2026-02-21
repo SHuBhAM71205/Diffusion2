@@ -33,7 +33,7 @@ def sample(config:Config| None = None):
         if isinstance(chkpt,nn.Module):
             unet = chkpt.to(device)
         elif isinstance(chkpt, dict):
-            unet.load_state_dict(chkpt["unet"])
+            unet.load_state_dict(chkpt["ema_unet"])
             unet.to(device)
         else:
             raise ValueError(f"Unexpected checkpoint type: {type(chkpt)}")
@@ -79,10 +79,11 @@ def sample(config:Config| None = None):
 
             if i > 0:
                 x_t += torch.sqrt(beta_t) * torch.randn_like(x_t)
+            
         img = x_t[0].permute(1,2,0).cpu().numpy()
-        # img = np.clip(img, -1, 1)
-        img = (img + 1) / 2
-        img = (img * 1).astype(np.uint8)
+        
+        img = (img * 0.5 ) + 0.5
+        img = (img * 255).astype(np.uint8)
         logger.info(f"{img.shape} {img.mean()} {img.std()}")
         pil_image = Image.fromarray(img)
         buf = io.BytesIO()

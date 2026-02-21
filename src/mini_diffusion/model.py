@@ -90,21 +90,16 @@ class UNet(nn.Module):
         t = self.time_embedding(t)
 
         x = self.init_conv(x, t)
-        # print("after init:", x.shape)
-
+        
         x1, skip1 = self.down1(x, t)
-        # print("after down1:", x1.shape, "skip1:", skip1.shape)
-
+        
         x2, skip2 = self.down2(x1, t)
-        # print("after down2:", x2.shape, "skip2:", skip2.shape)
-
+        
         x = self.bottleneck(x2, t)
-        # print("after bottleneck:", x.shape)
-
+        
         x = self.up1(x, skip2, t)
-        # print("after up1:", x.shape)
-
+        
         x = self.up2(x, skip1, t)
-        # print("after up2:", x.shape)
+        
 
         return self.final_conv(x)
