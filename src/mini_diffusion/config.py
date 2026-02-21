@@ -24,11 +24,12 @@ class TrainingConfig(BaseModel):
     data_dir:str
     save_path:str
     num_workers:int
-    
+    logs:str
 
 class InferenceConfig(BaseModel):
     model_path: str
     device: str
+    logs:str
     
 class Config(BaseModel):
     model: ModelConfig

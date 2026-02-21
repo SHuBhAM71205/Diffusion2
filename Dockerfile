@@ -1,9 +1,9 @@
 FROM python:3.13
 ENV PYTHONUNBUFFERED=1
 
-WORKDIR /app
+WORKDIR /docker-app
 
-COPY pyproject.toml .
+COPY pyproject.toml /docker-app/
 
 RUN pip install --upgrade pip
 RUN pip install .

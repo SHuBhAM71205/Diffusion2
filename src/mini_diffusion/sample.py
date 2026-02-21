@@ -13,6 +13,8 @@ import numpy as np
 from PIL import Image
 import io
 
+from Logger.logger import setup_logger
+
 def sample(config:Config| None = None):
 
     if config is None:
@@ -21,22 +23,23 @@ def sample(config:Config| None = None):
     model_path=config.inference.model_path
     device = config.inference.device if torch.cuda.is_available() else "cpu"
     img_dim = config.model.image_size
+    logger = setup_logger(config.inference.logs)
     print(f"Using device: {device}")
 
     unet = UNet(in_channels=3)
     try:
-        chkpt = torch.load(model_path, weights_only=False,map_location=device)
+        chkpt = torch.load(model_path)
         
         if isinstance(chkpt,nn.Module):
             unet = chkpt.to(device)
         elif isinstance(chkpt, dict):
-            unet.load_state_dict(chkpt)
+            unet.load_state_dict(chkpt["unet"])
             unet.to(device)
         else:
             raise ValueError(f"Unexpected checkpoint type: {type(chkpt)}")
         
     except Exception as e:
-        print(f"Error loading model: {e}")
+        print(f"Error loading model: {e} \n")
         unet.to(device)
     
     diffusion = Diffusion(config=config, device=device)
@@ -59,13 +62,28 @@ def sample(config:Config| None = None):
     with torch.inference_mode() , torch.no_grad():
         x_t = torch.randn(size=(1,3,img_dim,img_dim)).to(device)
         for i in reversed(range(config.diffusion.timesteps)):
-            x_t = 1/math.sqrt(diffusion.alpha[i]) * (x_t - ((1-diffusion.alpha[i])/torch.sqrt(1-diffusion.alpha_hat[i]))* unet(x_t,torch.Tensor([i,]).to(device))) #type:ignore
-            
-        img = x_t[0].permute(1,2,0).cpu().numpy()
+            t = torch.full((x_t.size(0),), i, device=device, dtype=torch.long)
 
-        img = np.clip(img , -1.0,1.0)/2.0
-        img = (img * 255.0).astype(np.uint8)
-        
+            eps = unet(x_t, t)
+
+            alpha_t = diffusion.alpha[i]
+            alpha_hat_t = diffusion.alpha_hat[i]
+            beta_t = diffusion.beta[i]
+
+            sqrt_alpha = torch.sqrt(alpha_t)
+            sqrt_one_minus_alpha_hat = torch.sqrt(1 - alpha_hat_t)
+
+            x_t = (1 / sqrt_alpha) * (
+                x_t - ((1 - alpha_t) / sqrt_one_minus_alpha_hat) * eps
+            )
+
+            if i > 0:
+                x_t += torch.sqrt(beta_t) * torch.randn_like(x_t)
+        img = x_t[0].permute(1,2,0).cpu().numpy()
+        # img = np.clip(img, -1, 1)
+        img = (img + 1) / 2
+        img = (img * 1).astype(np.uint8)
+        logger.info(f"{img.shape} {img.mean()} {img.std()}")
         pil_image = Image.fromarray(img)
         buf = io.BytesIO()
         pil_image.save(buf, format="PNG")
