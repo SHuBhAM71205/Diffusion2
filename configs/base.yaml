@@ -1,5 +1,5 @@
 model:
-  image_size: 64
+  image_size: 256
   in_channels: 1
   base_channels: 96
 
@@ -15,7 +15,7 @@ training:
   device: "cuda"
   data_dir: "./data"
   save_path: "./saves"
-  num_workers: 2
+  num_workers: 6
   logs: "./logs/train-logs"
 
 inference:
@@ -27,3 +27,8 @@ api:
   host: "localhost"
   port: 8000
   reload: True
+
+preprocessing:
+  data_dir: "./data/plane"
+  save_dir: "./data"
+  

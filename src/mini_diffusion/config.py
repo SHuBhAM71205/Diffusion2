@@ -1,7 +1,6 @@
 import yaml
 from pydantic import BaseModel # type: ignore
 
-
 # class ModelConfig(BaseModel):
     
 class ModelConfig(BaseModel):
@@ -30,12 +29,18 @@ class InferenceConfig(BaseModel):
     model_path: str
     device: str
     logs:str
-    
+
+class Preprocessing(BaseModel):
+    data_dir:str
+    save_dir:str
+
+
 class Config(BaseModel):
     model: ModelConfig
     diffusion: DiffusionConfig
     training: TrainingConfig
     inference: InferenceConfig
+    preprocessing: Preprocessing
 
 
 def load_config(path:str)->Config:

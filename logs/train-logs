@@ -123,20 +123,124 @@ batch_size=100 epochs=200 learning_rate=0.0001 device='cuda' data_dir='./data' s
 [2026-02-21 21:43:15] INFO: epoch: 198 Loss: 0.05048116967082024
 [2026-02-21 21:43:18] INFO: epoch: 199 Loss: 0.047268816828727724
 [2026-02-21 21:43:18] INFO: Model save at the path: ./saves/a.pth 
-
-
-[2026-02-21 21:46:01] INFO: Config used:
-batch_size=100 epochs=200 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=2 logs='./logs/train-logs'
-[2026-02-21 21:46:01] INFO: Using device: cuda
-[2026-02-21 21:46:41] INFO: Config used:
+[2026-02-21 22:54:33] INFO: Config used:
 batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=2 logs='./logs/train-logs'
-[2026-02-21 21:46:41] INFO: Using device: cuda
-[2026-02-21 21:50:27] INFO: Config used:
+[2026-02-21 22:54:33] INFO: Using device: cuda
+[2026-02-21 22:55:56] INFO: Config used:
 batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=2 logs='./logs/train-logs'
-[2026-02-21 21:50:27] INFO: Using device: cuda
-[2026-02-21 21:50:52] INFO: Config used:
+[2026-02-21 22:55:56] INFO: Using device: cuda
+[2026-02-21 22:56:28] INFO: Config used:
 batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=2 logs='./logs/train-logs'
-[2026-02-21 21:50:52] INFO: Using device: cuda
-[2026-02-21 21:51:30] INFO: Config used:
+[2026-02-21 22:56:28] INFO: Using device: cuda
+[2026-02-21 22:57:50] INFO: Config used:
 batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=2 logs='./logs/train-logs'
-[2026-02-21 21:51:30] INFO: Using device: cuda
+[2026-02-21 22:57:50] INFO: Using device: cuda
+[2026-02-21 22:59:10] INFO: Config used:
+batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=2 logs='./logs/train-logs'
+[2026-02-21 22:59:10] INFO: Using device: cuda
+[2026-02-21 23:00:01] INFO: Config used:
+batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=2 logs='./logs/train-logs'
+[2026-02-21 23:00:01] INFO: Using device: cuda
+[2026-02-21 23:01:05] INFO: Config used:
+batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=2 logs='./logs/train-logs'
+[2026-02-21 23:01:05] INFO: Using device: cuda
+[2026-02-21 23:01:52] INFO: Config used:
+batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=2 logs='./logs/train-logs'
+[2026-02-21 23:01:52] INFO: Using device: cuda
+[2026-02-21 23:06:55] INFO: Config used:
+batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=2 logs='./logs/train-logs'
+[2026-02-21 23:06:55] INFO: Using device: cuda
+[2026-02-21 23:09:27] INFO: Config used:
+batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=2 logs='./logs/train-logs'
+[2026-02-21 23:09:27] INFO: Using device: cuda
+[2026-02-21 23:10:00] INFO: epoch: 200 Loss: 0.05137150287628174
+[2026-02-21 23:10:33] INFO: epoch: 200 Loss: 0.04873274751007557
+[2026-02-21 23:14:01] INFO: Config used:
+batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=6 logs='./logs/train-logs'
+[2026-02-21 23:14:01] INFO: Using device: cuda
+[2026-02-21 23:14:25] INFO: epoch: 200 Loss: 0.047941422834992406
+[2026-02-21 23:14:47] INFO: epoch: 200 Loss: 0.05078519470989704
+[2026-02-21 23:15:00] INFO: epoch: 200 Loss: 0.0502985518425703
+[2026-02-21 23:15:25] INFO: epoch: 200 Loss: 0.049550097063183786
+[2026-02-21 23:15:47] INFO: epoch: 200 Loss: 0.04986301548779011
+[2026-02-21 23:16:00] INFO: epoch: 200 Loss: 0.0485295582562685
+[2026-02-21 23:18:34] INFO: Config used:
+batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=6 logs='./logs/train-logs'
+[2026-02-21 23:18:34] INFO: Using device: cuda
+[2026-02-21 23:18:58] INFO: epoch: 200 Loss: 0.04891564063727856
+[2026-02-21 23:19:21] INFO: epoch: 200 Loss: 0.04528731033205986
+[2026-02-21 23:19:33] INFO: epoch: 200 Loss: 0.050510788708925246
+[2026-02-21 23:19:55] INFO: epoch: 200 Loss: 0.04701321609318256
+[2026-02-21 23:20:16] INFO: epoch: 200 Loss: 0.049217154085636136
+[2026-02-21 23:20:28] INFO: epoch: 200 Loss: 0.044810247421264646
+[2026-02-21 23:20:50] INFO: epoch: 201 Loss: 0.04404669664800167
+[2026-02-21 23:21:11] INFO: epoch: 201 Loss: 0.04680058732628822
+[2026-02-21 23:21:34] INFO: epoch: 201 Loss: 0.042740011028945445
+[2026-02-21 23:21:48] INFO: epoch: 201 Loss: 0.04449889399111271
+[2026-02-21 23:22:09] INFO: epoch: 201 Loss: 0.043820112198591235
+[2026-02-21 23:22:31] INFO: epoch: 201 Loss: 0.04412893652915954
+[2026-02-21 23:22:42] INFO: epoch: 201 Loss: 0.04659607820212841
+[2026-02-21 23:23:09] INFO: epoch: 202 Loss: 0.043515749648213385
+[2026-02-22 14:08:37] INFO: Config used:
+batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=6 logs='./logs/train-logs'
+[2026-02-22 14:08:37] INFO: Using device: cuda
+[2026-02-22 14:10:43] INFO: Config used:
+batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=6 logs='./logs/train-logs'
+[2026-02-22 14:10:43] INFO: Using device: cuda
+[2026-02-22 14:10:47] INFO: epoch: 200 Loss: 0.061074549332261086
+[2026-02-22 14:10:50] INFO: epoch: 200 Loss: 0.05800784528255463
+[2026-02-22 14:10:53] INFO: epoch: 200 Loss: 0.0598471749573946
+[2026-02-22 14:10:55] INFO: epoch: 200 Loss: 0.05334097892045975
+[2026-02-22 14:10:58] INFO: epoch: 200 Loss: 0.055028737708926204
+[2026-02-22 14:15:18] INFO: Config used:
+batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=6 logs='./logs/train-logs'
+[2026-02-22 14:15:18] INFO: Using device: cuda
+[2026-02-22 14:15:22] INFO: epoch: 200 Loss: 0.05463894233107567
+[2026-02-22 14:15:52] INFO: Config used:
+batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=6 logs='./logs/train-logs'
+[2026-02-22 14:15:52] INFO: Using device: cuda
+[2026-02-22 14:16:45] INFO: Config used:
+batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=6 logs='./logs/train-logs'
+[2026-02-22 14:16:45] INFO: Using device: cuda
+[2026-02-22 14:16:49] INFO: epoch: 200 Loss: 0.05985922627151012
+[2026-02-22 14:19:27] INFO: Config used:
+batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=6 logs='./logs/train-logs'
+[2026-02-22 14:19:27] INFO: Using device: cuda
+[2026-02-22 14:21:32] INFO: Config used:
+batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=6 logs='./logs/train-logs'
+[2026-02-22 14:21:32] INFO: Using device: cuda
+[2026-02-22 14:21:43] INFO: Config used:
+batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=6 logs='./logs/train-logs'
+[2026-02-22 14:21:43] INFO: Using device: cuda
+[2026-02-22 14:22:17] INFO: Config used:
+batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=6 logs='./logs/train-logs'
+[2026-02-22 14:22:17] INFO: Using device: cuda
+[2026-02-22 14:23:06] INFO: Config used:
+batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=6 logs='./logs/train-logs'
+[2026-02-22 14:23:06] INFO: Using device: cuda
+[2026-02-22 14:24:47] INFO: Config used:
+batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=6 logs='./logs/train-logs'
+[2026-02-22 14:24:47] INFO: Using device: cuda
+[2026-02-22 14:25:00] INFO: Config used:
+batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=6 logs='./logs/train-logs'
+[2026-02-22 14:25:00] INFO: Using device: cuda
+[2026-02-22 14:26:22] INFO: Config used:
+batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=6 logs='./logs/train-logs'
+[2026-02-22 14:26:22] INFO: Using device: cuda
+[2026-02-22 14:26:34] INFO: Config used:
+batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=6 logs='./logs/train-logs'
+[2026-02-22 14:26:34] INFO: Using device: cuda
+[2026-02-22 14:26:45] INFO: epoch: 200 Loss: 0.05855028256773949
+[2026-02-22 14:26:51] INFO: Config used:
+batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=6 logs='./logs/train-logs'
+[2026-02-22 14:26:51] INFO: Using device: cuda
+[2026-02-22 14:26:59] INFO: epoch: 200 Loss: 0.05883198119699955
+[2026-02-22 14:27:17] INFO: Config used:
+batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=6 logs='./logs/train-logs'
+[2026-02-22 14:27:17] INFO: Using device: cuda
+[2026-02-22 14:28:37] INFO: Config used:
+batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=6 logs='./logs/train-logs'
+[2026-02-22 14:28:37] INFO: Using device: cuda
+[2026-02-22 14:30:39] INFO: Config used:
+batch_size=100 epochs=300 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=6 logs='./logs/train-logs'
+[2026-02-22 14:30:39] INFO: Using device: cuda
