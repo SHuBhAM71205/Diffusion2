@@ -34,8 +34,8 @@ def train(config: Config):
 
     logger.info(f"Using device: {device}")
     # init models
-    unet = UNet(in_channels=3).to(device)
-    ema_unet = UNet(in_channels=3).to(device)
+    unet = UNet(in_channels=config.model.in_channels).to(device)
+    ema_unet = UNet(in_channels=config.model.in_channels).to(device)
     ema_unet.eval()
     diffusion = Diffusion(config=config, device=device)
     # init transform

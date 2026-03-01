@@ -26,7 +26,7 @@ def sample(config:Config| None = None):
     logger = setup_logger(config.inference.logs)
     print(f"Using device: {device}")
 
-    unet = UNet(in_channels=3)
+    unet = UNet(in_channels=config.model.in_channels)
     try:
         chkpt = torch.load(model_path)
         
@@ -70,15 +70,26 @@ def sample(config:Config| None = None):
             alpha_hat_t = diffusion.alpha_hat[i]
             beta_t = diffusion.beta[i]
 
-            sqrt_alpha = torch.sqrt(alpha_t)
-            sqrt_one_minus_alpha_hat = torch.sqrt(1 - alpha_hat_t)
+            if i > 0:
+                alpha_hat_prev = diffusion.alpha_hat[i - 1]
+            else:
+                alpha_hat_prev = torch.tensor(1.0, device=device)
 
-            x_t = (1 / sqrt_alpha) * (
-                x_t - ((1 - alpha_t) / sqrt_one_minus_alpha_hat) * eps
-            )
+            # Predict x0
+            x0_pred = (x_t - torch.sqrt(1 - alpha_hat_t) * eps) / torch.sqrt(alpha_hat_t)
+
+            # Compute posterior mean
+            coef1 = torch.sqrt(alpha_hat_prev) * beta_t / (1 - alpha_hat_t)
+            coef2 = torch.sqrt(alpha_t) * (1 - alpha_hat_prev) / (1 - alpha_hat_t)
+
+            mean = coef1 * x0_pred + coef2 * x_t
 
             if i > 0:
-                x_t += torch.sqrt(beta_t) * torch.randn_like(x_t)
+                posterior_var = beta_t * (1 - alpha_hat_prev) / (1 - alpha_hat_t)
+                noise = torch.randn_like(x_t)
+                x_t = mean + torch.sqrt(posterior_var) * noise
+            else:
+                x_t = mean
             
         img = x_t[0].permute(1,2,0).cpu().numpy()
         

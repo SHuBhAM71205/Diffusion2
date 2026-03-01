@@ -1,16 +1,16 @@
 model:
   image_size: 128
-  in_channels: 1
-  base_channels: 96
+  in_channels: 3
+  base_channels: 128
 
 diffusion:
-  timesteps: 1000
+  timesteps: 1100
   beta_start: 0.0001
   beta_end: 0.02
 
 training:
   batch_size: 128
-  epochs: 100
+  epochs: 300
   learning_rate: 1e-4
   device: "cuda"
   data_dir: "./data"
