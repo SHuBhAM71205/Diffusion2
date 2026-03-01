@@ -2,6 +2,7 @@
 
 A clean, educational implementation of a **diffusion-based generative model** from scratch, featuring training, sampling, and a FastAPI REST API for inference.
 
+Right now Diffusion is not Diffusing
 ---
 
 ## 📋 Table of Contents
@@ -38,10 +39,13 @@ A clean, educational implementation of a **diffusion-based generative model** fr
 Diffusion2/
 ├── 📄 README.md                    # This file
 ├── 📄 main.py                      # Entry point for CLI modes (train, sample, serve)
+├── 📄 train_collab.ipynb           # notebook for experimentation
 ├── 📄 pyproject.toml               # Project metadata & dependencies
 ├── 🐳 Dockerfile                   # Container image definition
 ├── 📦 .python-version              # Python version spec (3.x)
 ├── 📦 .venv/                       # Virtual environment (gitignored)
+├── 📂 build/                       # build outputs (wheel, egg-info)
+├── 📂 diffusion2.egg-info/         # package metadata (top-level)
 │
 ├── 📂 app/
 │   └── app.py                      # FastAPI application & HTTP endpoints
@@ -50,28 +54,43 @@ Diffusion2/
 │   └── base.yaml                   # Hyperparameters & model config (YAML)
 │
 ├── 📂 data/
-│   └── caltech101/                 # Download location for Caltech-101 dataset
-│       └── 101_ObjectCategories/   # 101 object classes (aircrafts, animals, etc.)
+│   └── plane/                      # local plane images for Dataset
 │
-├── 📂 src/
+├── 📂 Dataset/
+│   ├── __init__.py
+│   └── plane.py                    # custom dataset loader
+│
+├── 📂 Logger/
+│   ├── __init__.py
+│   └── logger.py                   # logging helper
+│
+├── 📂 logs/
+│   ├── inference-logs/
+│   └── train-logs/
+│
+├── 📂 saves/                       # trained model checkpoints
+├── 📂 scripts/
+│   └── temp.ipynb                 # miscellaneous script
+│
+├── 📂 src/                         # installable source package
+│   ├── diffusion2.egg-info/        # package metadata within src
 │   ├── 📂 mini_diffusion/          # Core diffusion model package
 │   │   ├── __init__.py
 │   │   ├── config.py               # Config loader & Pydantic models
 │   │   ├── diffusion.py            # Diffusion process (noise scheduling)
 │   │   ├── model.py                # UNet architecture with time embeddings
+│   │   ├── preprocessing.py        # image transforms
 │   │   ├── train.py                # Training loop
 │   │   ├── sample.py               # Sampling/inference function
-│   │   └── nb.ipynb                # Jupyter notebook for exploration
+│   │   └── __pycache__/
 │   │
 │   └── 📂 argparsers/              # CLI argument parsers (extensible)
 │       ├── __init__.py
 │       ├── train_parser.py
 │       └── inference_parser.py
 │
-├── 📂 scripts/                      # Utility scripts (currently empty)
 ├── 📂 tests/                        # Unit tests (currently empty)
-├── 📂 saves/                        # Output directory for trained model checkpoints
-└── 📂 diffusion2.egg-info/         # Package metadata (auto-generated)
+└── 📂 data/plane/                   # dataset images
 ```
 
 ---
@@ -98,20 +117,32 @@ pip install torch torchvision numpy pydantic pyyaml tqdm fastapi uvicorn pillow
 ### 2️⃣ **Train the Model**
 
 ```bash
-python main.py train
+# use the configuration file to control hyperparameters & paths
+uv run python main.py train --config ./configs/base.yaml
 ```
 
-Trains a UNet diffusion model on Caltech-101 airplanes class (configurable in `configs/base.yaml`). Saves checkpoint to `./saves/a.pth`.
+Trains a UNet diffusion model on the dataset specified in the config (default is Caltech-101 airplanes). A checkpoint is written to the `save_path` defined in the config (by default `./saves/a.pth`).
 
 ### 3️⃣ **Generate Images**
 
 ```bash
-python main.py sample
+# pass the same config file used for training so the model path and device are picked up
+uv run python main.py sample --config ./configs/base.yaml
 ```
 
-Generates images using the trained model and displays via Matplotlib.
+The `sample` mode will load the checkpoint configured under `inference.model_path` and run the reverse diffusion process, writing the resulting PNG to `sample.png` in the current directory. You can also prefix the command with `uv run` if you are running inside the project's UV environment:
+
+```bash
+uv run python ./main.py sample --config ./configs/base.yaml
+```
+
+This command is **for generation only**; training should still use the `train` mode.  
+
+(Adjust paths and options in `configs/base.yaml` to point to your trained model or to change device settings.)
 
 ### 4️⃣ **Serve via API**
+
+The `serve` mode still starts the FastAPI server, but you can also call uvicorn directly as before:
 
 ```bash
 python main.py serve
