@@ -17,7 +17,7 @@ from torch.utils.data import DataLoader
 from Dataset.plane import Plane
 
 
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 ema_decay = 0.999
 
 def train(config: Config):
@@ -76,8 +76,8 @@ def train(config: Config):
         drop_last=True
     )
     
-    plt.imshow(next(iter(dataloader))[0].permute(1,2,0))
-    plt.show()
+    # plt.imshow(next(iter(dataloader))[0].permute(1,2,0))
+    # plt.show()
     # fig, axes = plt.subplots(2, 5, figsize=(15, 6))
     # axes = axes.flatten()
 
