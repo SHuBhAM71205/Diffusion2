@@ -17,7 +17,6 @@ class SinusoidalTimeEmbedding(nn.Module):
         emb = torch.cat((emb.sin(), emb.cos()), dim=-1)
         return emb
 
-
 class ConvBlock(nn.Module):
     def __init__(self, in_ch, out_ch, time_emb_dim):
         super().__init__()
@@ -74,10 +73,8 @@ class UNet(nn.Module):
         self.down1 = Down(base_channels, base_channels * 2, time_dim)
         self.down2 = Down(base_channels * 2, base_channels * 4, time_dim)
 
-        # Bottleneck
         self.bottleneck = ConvBlock(base_channels * 4, base_channels * 4, time_dim)
 
-        # Up path (NO HARDCODING)
         self.up1 = Up(
             base_channels * 4,
             base_channels * 4,

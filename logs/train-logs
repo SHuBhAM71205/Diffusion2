@@ -1103,3 +1103,647 @@ batch_size=128 epochs=100 learning_rate=0.0001 device='cuda' data_dir='./data' s
 [2026-03-01 10:43:40] INFO: Model save at the path: ./saves/a.pth 
 
 
+[2026-03-08 21:33:33] INFO: Config used:
+batch_size=64 epochs=100 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-03-08 21:33:33] INFO: Using device: cuda
+[2026-03-08 21:33:33] ERROR: Error(s) in loading state_dict for UNet:
+	size mismatch for init_conv.conv.0.weight: copying a param with shape torch.Size([96, 3, 3, 3]) from checkpoint, the shape in current model is torch.Size([64, 3, 3, 3]).
+	size mismatch for init_conv.conv.0.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([64]).
+	size mismatch for init_conv.conv.1.weight: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([64]).
+	size mismatch for init_conv.conv.1.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([64]).
+	size mismatch for init_conv.conv.3.weight: copying a param with shape torch.Size([96, 96, 3, 3]) from checkpoint, the shape in current model is torch.Size([64, 64, 3, 3]).
+	size mismatch for init_conv.conv.3.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([64]).
+	size mismatch for init_conv.conv.4.weight: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([64]).
+	size mismatch for init_conv.conv.4.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([64]).
+	size mismatch for init_conv.time_mlp.weight: copying a param with shape torch.Size([96, 384]) from checkpoint, the shape in current model is torch.Size([64, 256]).
+	size mismatch for init_conv.time_mlp.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([64]).
+	size mismatch for down1.block.conv.0.weight: copying a param with shape torch.Size([192, 96, 3, 3]) from checkpoint, the shape in current model is torch.Size([128, 64, 3, 3]).
+	size mismatch for down1.block.conv.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for down1.block.conv.1.weight: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for down1.block.conv.1.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for down1.block.conv.3.weight: copying a param with shape torch.Size([192, 192, 3, 3]) from checkpoint, the shape in current model is torch.Size([128, 128, 3, 3]).
+	size mismatch for down1.block.conv.3.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for down1.block.conv.4.weight: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for down1.block.conv.4.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for down1.block.time_mlp.weight: copying a param with shape torch.Size([192, 384]) from checkpoint, the shape in current model is torch.Size([128, 256]).
+	size mismatch for down1.block.time_mlp.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for down2.block.conv.0.weight: copying a param with shape torch.Size([384, 192, 3, 3]) from checkpoint, the shape in current model is torch.Size([256, 128, 3, 3]).
+	size mismatch for down2.block.conv.0.bias: copying a param with shape torch.Size([384]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for down2.block.conv.1.weight: copying a param with shape torch.Size([384]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for down2.block.conv.1.bias: copying a param with shape torch.Size([384]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for down2.block.conv.3.weight: copying a param with shape torch.Size([384, 384, 3, 3]) from checkpoint, the shape in current model is torch.Size([256, 256, 3, 3]).
+	size mismatch for down2.block.conv.3.bias: copying a param with shape torch.Size([384]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for down2.block.conv.4.weight: copying a param with shape torch.Size([384]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for down2.block.conv.4.bias: copying a param with shape torch.Size([384]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for down2.block.time_mlp.weight: copying a param with shape torch.Size([384, 384]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for down2.block.time_mlp.bias: copying a param with shape torch.Size([384]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for bottleneck.conv.0.weight: copying a param with shape torch.Size([384, 384, 3, 3]) from checkpoint, the shape in current model is torch.Size([256, 256, 3, 3]).
+	size mismatch for bottleneck.conv.0.bias: copying a param with shape torch.Size([384]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for bottleneck.conv.1.weight: copying a param with shape torch.Size([384]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for bottleneck.conv.1.bias: copying a param with shape torch.Size([384]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for bottleneck.conv.3.weight: copying a param with shape torch.Size([384, 384, 3, 3]) from checkpoint, the shape in current model is torch.Size([256, 256, 3, 3]).
+	size mismatch for bottleneck.conv.3.bias: copying a param with shape torch.Size([384]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for bottleneck.conv.4.weight: copying a param with shape torch.Size([384]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for bottleneck.conv.4.bias: copying a param with shape torch.Size([384]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for bottleneck.time_mlp.weight: copying a param with shape torch.Size([384, 384]) from checkpoint, the shape in current model is torch.Size([256, 256]).
+	size mismatch for bottleneck.time_mlp.bias: copying a param with shape torch.Size([384]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for up1.up.weight: copying a param with shape torch.Size([384, 192, 2, 2]) from checkpoint, the shape in current model is torch.Size([256, 128, 2, 2]).
+	size mismatch for up1.up.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for up1.block.conv.0.weight: copying a param with shape torch.Size([192, 576, 3, 3]) from checkpoint, the shape in current model is torch.Size([128, 384, 3, 3]).
+	size mismatch for up1.block.conv.0.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for up1.block.conv.1.weight: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for up1.block.conv.1.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for up1.block.conv.3.weight: copying a param with shape torch.Size([192, 192, 3, 3]) from checkpoint, the shape in current model is torch.Size([128, 128, 3, 3]).
+	size mismatch for up1.block.conv.3.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for up1.block.conv.4.weight: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for up1.block.conv.4.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for up1.block.time_mlp.weight: copying a param with shape torch.Size([192, 384]) from checkpoint, the shape in current model is torch.Size([128, 256]).
+	size mismatch for up1.block.time_mlp.bias: copying a param with shape torch.Size([192]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for up2.up.weight: copying a param with shape torch.Size([192, 96, 2, 2]) from checkpoint, the shape in current model is torch.Size([128, 64, 2, 2]).
+	size mismatch for up2.up.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([64]).
+	size mismatch for up2.block.conv.0.weight: copying a param with shape torch.Size([96, 288, 3, 3]) from checkpoint, the shape in current model is torch.Size([64, 192, 3, 3]).
+	size mismatch for up2.block.conv.0.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([64]).
+	size mismatch for up2.block.conv.1.weight: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([64]).
+	size mismatch for up2.block.conv.1.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([64]).
+	size mismatch for up2.block.conv.3.weight: copying a param with shape torch.Size([96, 96, 3, 3]) from checkpoint, the shape in current model is torch.Size([64, 64, 3, 3]).
+	size mismatch for up2.block.conv.3.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([64]).
+	size mismatch for up2.block.conv.4.weight: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([64]).
+	size mismatch for up2.block.conv.4.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([64]).
+	size mismatch for up2.block.time_mlp.weight: copying a param with shape torch.Size([96, 384]) from checkpoint, the shape in current model is torch.Size([64, 256]).
+	size mismatch for up2.block.time_mlp.bias: copying a param with shape torch.Size([96]) from checkpoint, the shape in current model is torch.Size([64]).
+	size mismatch for final_conv.weight: copying a param with shape torch.Size([3, 96, 1, 1]) from checkpoint, the shape in current model is torch.Size([3, 64, 1, 1]).
+[2026-03-08 21:33:33] INFO: Defaulting to reinit random UNET model
+[2026-03-08 21:33:50] INFO: Config used:
+batch_size=64 epochs=100 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-03-08 21:33:50] INFO: Using device: cuda
+[2026-03-08 21:33:51] ERROR: [Errno 2] No such file or directory: './saves/a.pth'
+[2026-03-08 21:33:51] INFO: Defaulting to reinit random UNET model
+[2026-03-08 21:34:15] INFO: Config used:
+batch_size=64 epochs=100 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-03-08 21:34:15] INFO: Using device: cuda
+[2026-03-08 21:34:15] ERROR: [Errno 2] No such file or directory: './saves/a.pth'
+[2026-03-08 21:34:15] INFO: Defaulting to reinit random UNET model
+[2026-03-08 21:36:25] INFO: Config used:
+batch_size=64 epochs=100 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-03-08 21:36:25] INFO: Using device: cuda
+[2026-03-08 21:36:25] ERROR: [Errno 2] No such file or directory: './saves/a.pth'
+[2026-03-08 21:36:25] INFO: Defaulting to reinit random UNET model
+[2026-03-08 21:36:48] INFO: Config used:
+batch_size=1 epochs=100 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-03-08 21:36:48] INFO: Using device: cuda
+[2026-03-08 21:36:48] ERROR: [Errno 2] No such file or directory: './saves/a.pth'
+[2026-03-08 21:36:48] INFO: Defaulting to reinit random UNET model
+[2026-03-08 21:37:08] INFO: Config used:
+batch_size=1 epochs=100 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-03-08 21:37:08] INFO: Using device: cuda
+[2026-03-08 21:37:08] ERROR: [Errno 2] No such file or directory: './saves/a.pth'
+[2026-03-08 21:37:08] INFO: Defaulting to reinit random UNET model
+[2026-03-08 21:38:32] INFO: Config used:
+batch_size=1 epochs=100 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-03-08 21:38:32] INFO: Using device: cuda
+[2026-03-08 21:38:32] ERROR: [Errno 2] No such file or directory: './saves/a.pth'
+[2026-03-08 21:38:32] INFO: Defaulting to reinit random UNET model
+[2026-03-08 21:38:32] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:32] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:32] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:33] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:33] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:33] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:33] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:33] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:33] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:33] INFO: epoch: 9 Loss: 1.0534626603126527
+[2026-03-08 21:38:33] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:33] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:33] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:33] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:34] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:34] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:34] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:34] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:34] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:34] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:34] INFO: epoch: 19 Loss: 0.9241152167320251
+[2026-03-08 21:38:34] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:34] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:34] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:35] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:35] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:35] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:35] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:35] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:35] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:35] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:35] INFO: epoch: 29 Loss: 0.8246389210224152
+[2026-03-08 21:38:35] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:35] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:35] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:36] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:36] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:36] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:36] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:36] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:36] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:36] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:36] INFO: epoch: 39 Loss: 0.6789698302745819
+[2026-03-08 21:38:36] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:36] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:36] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:37] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:37] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:37] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:37] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:37] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:37] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:37] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:37] INFO: epoch: 49 Loss: 0.5674779951572418
+[2026-03-08 21:38:37] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:37] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:37] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:38] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:38] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:38] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:38] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:38] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:38] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:38] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:38] INFO: epoch: 59 Loss: 0.5373740255832672
+[2026-03-08 21:38:38] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:38] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:39] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:39] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:39] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:39] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:39] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:39] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:39] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:39] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:39] INFO: epoch: 69 Loss: 0.45978658497333524
+[2026-03-08 21:38:40] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:40] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:40] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:40] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:40] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:40] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:40] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:40] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:41] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:41] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:41] INFO: epoch: 79 Loss: 0.3819813638925552
+[2026-03-08 21:38:41] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:41] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:41] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:41] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:41] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:41] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:42] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:42] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:42] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:42] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:42] INFO: epoch: 89 Loss: 0.3981039434671402
+[2026-03-08 21:38:42] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:42] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:42] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:42] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:43] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:43] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:43] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:43] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:43] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:43] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:43] INFO: epoch: 99 Loss: 0.2910083830356598
+[2026-03-08 21:38:43] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:38:43] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:39:11] INFO: Config used:
+batch_size=1 epochs=2000 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-03-08 21:39:11] INFO: Using device: cuda
+[2026-03-08 21:39:13] INFO: epoch: 109 Loss: 0.2776497811079025
+[2026-03-08 21:39:14] INFO: epoch: 119 Loss: 0.2584649160504341
+[2026-03-08 21:39:15] INFO: epoch: 129 Loss: 0.2167740896344185
+[2026-03-08 21:39:17] INFO: epoch: 139 Loss: 0.1987517863512039
+[2026-03-08 21:39:18] INFO: epoch: 149 Loss: 0.21843237280845643
+[2026-03-08 21:39:19] INFO: epoch: 159 Loss: 0.188839128613472
+[2026-03-08 21:39:22] INFO: epoch: 169 Loss: 0.22657680362462998
+[2026-03-08 21:39:24] INFO: epoch: 179 Loss: 0.221979720890522
+[2026-03-08 21:39:25] INFO: epoch: 189 Loss: 0.17882943004369736
+[2026-03-08 21:39:26] INFO: epoch: 199 Loss: 0.1666375383734703
+[2026-03-08 21:39:27] INFO: epoch: 209 Loss: 0.24497678726911545
+[2026-03-08 21:39:29] INFO: epoch: 219 Loss: 0.15860968828201294
+[2026-03-08 21:39:31] INFO: epoch: 229 Loss: 0.13924741894006729
+[2026-03-08 21:39:34] INFO: epoch: 239 Loss: 0.19554438963532447
+[2026-03-08 21:39:37] INFO: epoch: 249 Loss: 0.1259074367582798
+[2026-03-08 21:39:41] INFO: epoch: 259 Loss: 0.13832497149705886
+[2026-03-08 21:39:44] INFO: epoch: 269 Loss: 0.1475200265645981
+[2026-03-08 21:39:46] INFO: epoch: 279 Loss: 0.12139240577816963
+[2026-03-08 21:39:49] INFO: epoch: 289 Loss: 0.11221666187047959
+[2026-03-08 21:39:51] INFO: epoch: 299 Loss: 0.12104014381766319
+[2026-03-08 21:39:52] INFO: epoch: 309 Loss: 0.14806359261274338
+[2026-03-08 21:39:53] INFO: epoch: 319 Loss: 0.14026091769337654
+[2026-03-08 21:39:54] INFO: epoch: 329 Loss: 0.1304039902985096
+[2026-03-08 21:39:56] INFO: epoch: 339 Loss: 0.12464928925037384
+[2026-03-08 21:39:57] INFO: epoch: 349 Loss: 0.09789149537682533
+[2026-03-08 21:39:58] INFO: epoch: 359 Loss: 0.13019832745194435
+[2026-03-08 21:39:59] INFO: epoch: 369 Loss: 0.15226174145936966
+[2026-03-08 21:40:03] INFO: epoch: 379 Loss: 0.1289742536842823
+[2026-03-08 21:40:04] INFO: epoch: 389 Loss: 0.10514742508530617
+[2026-03-08 21:40:05] INFO: epoch: 399 Loss: 0.1393548309803009
+[2026-03-08 21:40:07] INFO: epoch: 409 Loss: 0.09445373937487603
+[2026-03-08 21:40:10] INFO: epoch: 419 Loss: 0.11373537108302116
+[2026-03-08 21:40:12] INFO: epoch: 429 Loss: 0.10600131005048752
+[2026-03-08 21:40:13] INFO: epoch: 439 Loss: 0.08786268606781959
+[2026-03-08 21:40:14] INFO: epoch: 449 Loss: 0.09912813529372215
+[2026-03-08 21:40:18] INFO: epoch: 459 Loss: 0.09722095653414727
+[2026-03-08 21:40:19] INFO: epoch: 469 Loss: 0.11206855177879334
+[2026-03-08 21:40:23] INFO: epoch: 479 Loss: 0.09487922340631486
+[2026-03-08 21:40:24] INFO: epoch: 489 Loss: 0.16533484384417535
+[2026-03-08 21:40:25] INFO: epoch: 499 Loss: 0.10244647338986397
+[2026-03-08 21:40:26] INFO: epoch: 509 Loss: 0.09713063687086106
+[2026-03-08 21:40:28] INFO: epoch: 519 Loss: 0.08887556195259094
+[2026-03-08 21:40:29] INFO: epoch: 529 Loss: 0.11595557108521462
+[2026-03-08 21:40:30] INFO: epoch: 539 Loss: 0.08435416370630264
+[2026-03-08 21:40:31] INFO: epoch: 549 Loss: 0.07401404678821563
+[2026-03-08 21:40:32] INFO: epoch: 559 Loss: 0.0819105938076973
+[2026-03-08 21:40:34] INFO: epoch: 569 Loss: 0.09177498780190944
+[2026-03-08 21:40:35] INFO: epoch: 579 Loss: 0.07220236137509346
+[2026-03-08 21:40:36] INFO: epoch: 589 Loss: 0.07912601232528686
+[2026-03-08 21:40:37] INFO: epoch: 599 Loss: 0.07340574227273464
+[2026-03-08 21:40:39] INFO: epoch: 609 Loss: 0.07435254380106926
+[2026-03-08 21:40:42] INFO: epoch: 619 Loss: 0.09117459468543529
+[2026-03-08 21:40:44] INFO: epoch: 629 Loss: 0.11662428453564644
+[2026-03-08 21:40:45] INFO: epoch: 639 Loss: 0.0766473114490509
+[2026-03-08 21:40:46] INFO: epoch: 649 Loss: 0.07809278890490531
+[2026-03-08 21:40:50] INFO: epoch: 659 Loss: 0.08667874708771706
+[2026-03-08 21:40:51] INFO: epoch: 669 Loss: 0.15782335959374905
+[2026-03-08 21:40:52] INFO: epoch: 679 Loss: 0.07532531134784222
+[2026-03-08 21:40:53] INFO: epoch: 689 Loss: 0.07860985398292542
+[2026-03-08 21:40:55] INFO: epoch: 699 Loss: 0.07838354632258415
+[2026-03-08 21:40:56] INFO: epoch: 709 Loss: 0.0661410078406334
+[2026-03-08 21:40:57] INFO: epoch: 719 Loss: 0.07157946266233921
+[2026-03-08 21:40:58] INFO: epoch: 729 Loss: 0.18889942467212678
+[2026-03-08 21:40:59] INFO: epoch: 739 Loss: 0.06511556096374989
+[2026-03-08 21:41:01] INFO: epoch: 749 Loss: 0.13167320489883422
+[2026-03-08 21:41:02] INFO: epoch: 759 Loss: 0.0816682804375887
+[2026-03-08 21:41:03] INFO: epoch: 769 Loss: 0.07595223821699619
+[2026-03-08 21:41:04] INFO: epoch: 779 Loss: 0.06268458366394043
+[2026-03-08 21:41:06] INFO: epoch: 789 Loss: 0.12945347093045712
+[2026-03-08 21:41:07] INFO: epoch: 799 Loss: 0.09888822808861733
+[2026-03-08 21:41:08] INFO: epoch: 809 Loss: 0.11670445948839188
+[2026-03-08 21:41:09] INFO: epoch: 819 Loss: 0.05971148945391178
+[2026-03-08 21:41:11] INFO: epoch: 829 Loss: 0.06848799102008343
+[2026-03-08 21:41:12] INFO: epoch: 839 Loss: 0.057692212611436845
+[2026-03-08 21:41:13] INFO: epoch: 849 Loss: 0.06709181107580661
+[2026-03-08 21:41:14] INFO: epoch: 859 Loss: 0.054114678874611855
+[2026-03-08 21:41:16] INFO: epoch: 869 Loss: 0.05892250612378121
+[2026-03-08 21:41:18] INFO: epoch: 879 Loss: 0.061152847856283186
+[2026-03-08 21:41:20] INFO: epoch: 889 Loss: 0.05870699919760227
+[2026-03-08 21:41:21] INFO: epoch: 899 Loss: 0.06047529466450215
+[2026-03-08 21:41:23] INFO: epoch: 909 Loss: 0.058294255286455154
+[2026-03-08 21:41:24] INFO: epoch: 919 Loss: 0.06553935296833516
+[2026-03-08 21:41:28] INFO: epoch: 929 Loss: 0.04950252287089825
+[2026-03-08 21:41:29] INFO: epoch: 939 Loss: 0.058068125322461125
+[2026-03-08 21:41:32] INFO: epoch: 949 Loss: 0.058415795862674716
+[2026-03-08 21:41:36] INFO: epoch: 959 Loss: 0.058759967982769015
+[2026-03-08 21:41:40] INFO: epoch: 969 Loss: 0.08773411512374878
+[2026-03-08 21:41:41] INFO: epoch: 979 Loss: 0.061701066046953204
+[2026-03-08 21:41:44] INFO: epoch: 989 Loss: 0.06375490091741084
+[2026-03-08 21:41:46] INFO: epoch: 999 Loss: 0.05143675692379475
+[2026-03-08 21:41:47] INFO: epoch: 1009 Loss: 0.05578864403069019
+[2026-03-08 21:41:48] INFO: epoch: 1019 Loss: 0.08198092617094517
+[2026-03-08 21:41:49] INFO: epoch: 1029 Loss: 0.04689512439072132
+[2026-03-08 21:41:51] INFO: epoch: 1039 Loss: 0.053518233448266984
+[2026-03-08 21:41:52] INFO: epoch: 1049 Loss: 0.1257793616503477
+[2026-03-08 21:41:55] INFO: epoch: 1059 Loss: 0.15355663411319256
+[2026-03-08 21:41:58] INFO: epoch: 1069 Loss: 0.07313436605036258
+[2026-03-08 21:42:03] INFO: epoch: 1079 Loss: 0.053637679666280746
+[2026-03-08 21:42:04] INFO: epoch: 1089 Loss: 0.06312948949635029
+[2026-03-08 21:42:05] INFO: epoch: 1099 Loss: 0.060833034291863444
+[2026-03-08 21:42:06] INFO: epoch: 1109 Loss: 0.051343511790037155
+[2026-03-08 21:42:08] INFO: epoch: 1119 Loss: 0.07058584354817868
+[2026-03-08 21:42:09] INFO: epoch: 1129 Loss: 0.07493402101099492
+[2026-03-08 21:42:10] INFO: epoch: 1139 Loss: 0.059857143089175224
+[2026-03-08 21:42:11] INFO: epoch: 1149 Loss: 0.07092823199927807
+[2026-03-08 21:42:13] INFO: epoch: 1159 Loss: 0.05257308334112167
+[2026-03-08 21:42:14] INFO: epoch: 1169 Loss: 0.0857057437300682
+[2026-03-08 21:42:17] INFO: epoch: 1179 Loss: 0.043799636885523796
+[2026-03-08 21:42:19] INFO: epoch: 1189 Loss: 0.0496234081685543
+[2026-03-08 21:42:20] INFO: epoch: 1199 Loss: 0.0550541877746582
+[2026-03-08 21:42:26] INFO: epoch: 1209 Loss: 0.04978352412581444
+[2026-03-08 21:42:27] INFO: epoch: 1219 Loss: 0.04652710407972336
+[2026-03-08 21:42:28] INFO: epoch: 1229 Loss: 0.04615322388708591
+[2026-03-08 21:42:30] INFO: epoch: 1239 Loss: 0.05420367047190666
+[2026-03-08 21:42:31] INFO: epoch: 1249 Loss: 0.0337903518229723
+[2026-03-08 21:42:35] INFO: epoch: 1259 Loss: 0.039787649735808374
+[2026-03-08 21:42:38] INFO: epoch: 1269 Loss: 0.04063719902187586
+[2026-03-08 21:42:39] INFO: epoch: 1279 Loss: 0.04695452433079481
+[2026-03-08 21:42:41] INFO: epoch: 1289 Loss: 0.03693775460124016
+[2026-03-08 21:42:42] INFO: epoch: 1299 Loss: 0.03342270627617836
+[2026-03-08 21:42:43] INFO: epoch: 1309 Loss: 0.045308136567473414
+[2026-03-08 21:42:44] INFO: epoch: 1319 Loss: 0.034209915436804295
+[2026-03-08 21:42:46] INFO: epoch: 1329 Loss: 0.04806667063385248
+[2026-03-08 21:42:47] INFO: epoch: 1339 Loss: 0.040826914459466936
+[2026-03-08 21:42:48] INFO: epoch: 1349 Loss: 0.05091169234365225
+[2026-03-08 21:42:51] INFO: epoch: 1359 Loss: 0.044645670987665656
+[2026-03-08 21:42:53] INFO: epoch: 1369 Loss: 0.038684212043881415
+[2026-03-08 21:42:54] INFO: epoch: 1379 Loss: 0.03237649723887444
+[2026-03-08 21:42:56] INFO: epoch: 1389 Loss: 0.036264064721763134
+[2026-03-08 21:42:57] INFO: epoch: 1399 Loss: 0.030676078237593173
+[2026-03-08 21:42:58] INFO: epoch: 1409 Loss: 0.0360831031575799
+[2026-03-08 21:42:59] INFO: epoch: 1419 Loss: 0.03885830473154783
+[2026-03-08 21:43:01] INFO: epoch: 1429 Loss: 0.04244176466017961
+[2026-03-08 21:43:02] INFO: epoch: 1439 Loss: 0.046459792368114
+[2026-03-08 21:43:03] INFO: epoch: 1449 Loss: 0.03081686422228813
+[2026-03-08 21:43:04] INFO: epoch: 1459 Loss: 0.04210018198937178
+[2026-03-08 21:43:05] INFO: epoch: 1469 Loss: 0.03453171364963055
+[2026-03-08 21:43:09] INFO: epoch: 1479 Loss: 0.05914154835045338
+[2026-03-08 21:43:10] INFO: epoch: 1489 Loss: 0.04470417499542236
+[2026-03-08 21:43:12] INFO: epoch: 1499 Loss: 0.11315682288259268
+[2026-03-08 21:43:13] INFO: epoch: 1509 Loss: 0.04017243273556233
+[2026-03-08 21:43:14] INFO: epoch: 1519 Loss: 0.15982822757214307
+[2026-03-08 21:43:15] INFO: epoch: 1529 Loss: 0.11545768044888974
+[2026-03-08 21:43:17] INFO: epoch: 1539 Loss: 0.05047248639166355
+[2026-03-08 21:43:20] INFO: epoch: 1549 Loss: 0.04602256938815117
+[2026-03-08 21:43:22] INFO: epoch: 1559 Loss: 0.04844845924526453
+[2026-03-08 21:43:23] INFO: epoch: 1569 Loss: 0.03771824259310961
+[2026-03-08 21:43:24] INFO: epoch: 1579 Loss: 0.034092295728623864
+[2026-03-08 21:43:25] INFO: epoch: 1589 Loss: 0.047852469608187675
+[2026-03-08 21:43:29] INFO: epoch: 1599 Loss: 0.043049182184040545
+[2026-03-08 21:43:35] INFO: epoch: 1609 Loss: 0.041011111438274385
+[2026-03-08 21:43:36] INFO: epoch: 1619 Loss: 0.045596540346741675
+[2026-03-08 21:43:37] INFO: epoch: 1629 Loss: 0.041547632031142714
+[2026-03-08 21:43:41] INFO: epoch: 1639 Loss: 0.04444437231868505
+[2026-03-08 21:43:42] INFO: epoch: 1649 Loss: 0.030667205899953844
+[2026-03-08 21:43:44] INFO: epoch: 1659 Loss: 0.059647838957607745
+[2026-03-08 21:43:45] INFO: epoch: 1669 Loss: 0.04324616063386202
+[2026-03-08 21:43:46] INFO: epoch: 1679 Loss: 0.03435728587210178
+[2026-03-08 21:43:47] INFO: epoch: 1689 Loss: 0.047602863423526286
+[2026-03-08 21:43:49] INFO: epoch: 1699 Loss: 0.04841448403894901
+[2026-03-08 21:43:50] INFO: epoch: 1709 Loss: 0.027856105379760264
+[2026-03-08 21:43:51] INFO: epoch: 1719 Loss: 0.02603025157004595
+[2026-03-08 21:43:52] INFO: epoch: 1729 Loss: 0.032933223992586136
+[2026-03-08 21:43:53] INFO: epoch: 1739 Loss: 0.03417719658464193
+[2026-03-08 21:43:56] INFO: epoch: 1749 Loss: 0.044778551533818246
+[2026-03-08 21:43:58] INFO: epoch: 1759 Loss: 0.03019988276064396
+[2026-03-08 21:44:00] INFO: epoch: 1769 Loss: 0.031270576268434526
+[2026-03-08 21:44:01] INFO: epoch: 1779 Loss: 0.03291206005960703
+[2026-03-08 21:44:02] INFO: epoch: 1789 Loss: 0.03615811709314585
+[2026-03-08 21:44:05] INFO: epoch: 1799 Loss: 0.040354966185986996
+[2026-03-08 21:44:07] INFO: epoch: 1809 Loss: 0.032373245991766456
+[2026-03-08 21:44:08] INFO: epoch: 1819 Loss: 0.03235937505960464
+[2026-03-08 21:44:09] INFO: epoch: 1829 Loss: 0.035135010816156866
+[2026-03-08 21:44:11] INFO: epoch: 1839 Loss: 0.03613096326589584
+[2026-03-08 21:44:12] INFO: epoch: 1849 Loss: 0.040755790658295155
+[2026-03-08 21:44:13] INFO: epoch: 1859 Loss: 0.03808257002383471
+[2026-03-08 21:44:16] INFO: epoch: 1869 Loss: 0.029433639161288737
+[2026-03-08 21:44:18] INFO: epoch: 1879 Loss: 0.02610099259763956
+[2026-03-08 21:44:19] INFO: epoch: 1889 Loss: 0.03464285638183355
+[2026-03-08 21:44:20] INFO: epoch: 1899 Loss: 0.04022225793451071
+[2026-03-08 21:44:22] INFO: epoch: 1909 Loss: 0.04425414986908436
+[2026-03-08 21:44:23] INFO: epoch: 1919 Loss: 0.029906991682946683
+[2026-03-08 21:44:26] INFO: epoch: 1929 Loss: 0.04134154561907053
+[2026-03-08 21:44:28] INFO: epoch: 1939 Loss: 0.034663252718746665
+[2026-03-08 21:44:29] INFO: epoch: 1949 Loss: 0.06781312189996243
+[2026-03-08 21:44:30] INFO: epoch: 1959 Loss: 0.06438086964190007
+[2026-03-08 21:44:34] INFO: epoch: 1969 Loss: 0.03848199881613255
+[2026-03-08 21:44:35] INFO: epoch: 1979 Loss: 0.03252425007522106
+[2026-03-08 21:44:36] INFO: epoch: 1989 Loss: 0.04129873551428318
+[2026-03-08 21:44:37] INFO: epoch: 1999 Loss: 0.030788331665098666
+[2026-03-08 21:54:09] INFO: Config used:
+batch_size=1 epochs=2000 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-03-08 21:54:09] INFO: Using device: cuda
+[2026-03-08 21:56:18] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 21:56:32] INFO: Config used:
+batch_size=1 epochs=2000 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-03-08 21:56:32] INFO: Using device: cuda
+[2026-03-08 22:29:14] INFO: Config used:
+batch_size=1 epochs=2000 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-03-08 22:29:14] INFO: Using device: cuda
+[2026-03-08 22:29:14] ERROR: [Errno 2] No such file or directory: './saves/a.pth'
+[2026-03-08 22:29:14] INFO: Defaulting to reinit random UNET model
+[2026-03-08 22:31:23] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 22:33:51] INFO: Config used:
+batch_size=1 epochs=2000 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-03-08 22:33:51] INFO: Using device: cuda
+[2026-03-08 22:34:50] INFO: Config used:
+batch_size=1 epochs=2000 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-03-08 22:34:50] INFO: Using device: cuda
+[2026-03-08 22:36:59] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-03-08 22:41:36] INFO: Config used:
+batch_size=1 epochs=2000 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-03-08 22:41:36] INFO: Using device: cuda
+[2026-03-08 22:45:58] INFO: Config used:
+batch_size=1 epochs=2000 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-03-08 22:45:58] INFO: Using device: cuda
+[2026-03-08 22:57:01] INFO: Config used:
+batch_size=1 epochs=2000 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-03-08 22:57:01] INFO: Using device: cuda
+[2026-03-08 22:59:10] INFO: Model save at the path: ./saves/a.pth 
+
+

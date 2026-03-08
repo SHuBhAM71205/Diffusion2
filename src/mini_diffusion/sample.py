@@ -8,7 +8,6 @@ from mini_diffusion.config import load_config, Config
 from mini_diffusion.model import UNet
 from mini_diffusion.diffusion import Diffusion
 
-# import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 import io
@@ -26,7 +25,7 @@ def sample(config:Config| None = None):
     logger = setup_logger(config.inference.logs)
     print(f"Using device: {device}")
 
-    unet = UNet(in_channels=config.model.in_channels)
+    unet = UNet(in_channels=config.model.in_channels,base_channels=config.model.base_channels)
     try:
         chkpt = torch.load(model_path)
         
@@ -65,38 +64,42 @@ def sample(config:Config| None = None):
             t = torch.full((x_t.size(0),), i, device=device, dtype=torch.long)
 
             eps = unet(x_t, t)
-
+            # print("eps std:", eps.std().item())
             alpha_t = diffusion.alpha[i]
             alpha_hat_t = diffusion.alpha_hat[i]
             beta_t = diffusion.beta[i]
 
-            if i > 0:
-                alpha_hat_prev = diffusion.alpha_hat[i - 1]
-            else:
-                alpha_hat_prev = torch.tensor(1.0, device=device)
+            # compute coefficient
+            coef = beta_t / torch.sqrt(1 - alpha_hat_t)
 
-            # Predict x0
-            x0_pred = (x_t - torch.sqrt(1 - alpha_hat_t) * eps) / torch.sqrt(alpha_hat_t)
-
-            # Compute posterior mean
-            coef1 = torch.sqrt(alpha_hat_prev) * beta_t / (1 - alpha_hat_t)
-            coef2 = torch.sqrt(alpha_t) * (1 - alpha_hat_prev) / (1 - alpha_hat_t)
-
-            mean = coef1 * x0_pred + coef2 * x_t
+            # mean of reverse distribution
+            mean = (x_t - coef * eps) / torch.sqrt(alpha_t)
 
             if i > 0:
+                alpha_hat_prev = diffusion.alpha_hat[i-1]
+
                 posterior_var = beta_t * (1 - alpha_hat_prev) / (1 - alpha_hat_t)
+
                 noise = torch.randn_like(x_t)
+
                 x_t = mean + torch.sqrt(posterior_var) * noise
             else:
                 x_t = mean
             
+            print(f"Step {i}: mean={x_t.mean():.4f}, std={x_t.std():.4f}")
+
+        img = x_t[0].permute(1, 2, 0).cpu().numpy()
+
+        logger.info(f"{img.shape} {img.mean()} {img.std()}")
+
+        # convert to image space
         img = x_t[0].permute(1,2,0).cpu().numpy()
         
         img = (img * 0.5 ) + 0.5
         img = (img * 255).astype(np.uint8)
         logger.info(f"{img.shape} {img.mean()} {img.std()}")
         pil_image = Image.fromarray(img)
+
         buf = io.BytesIO()
         pil_image.save(buf, format="PNG")
         buf.seek(0)
