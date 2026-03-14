@@ -1,13 +1,20 @@
 import os
 import mmap
 import array
-import numpy as np
 import torch
 from torch.utils.data import Dataset
-from mini_diffusion.config import Config
+
 
 class Plane(Dataset):
-    def __init__(self, data_dir: str,channel:int = 3,width:int = 32,height:int = 32,transform=None):
+    def __init__(
+                    self,
+                    data_dir: str,
+                    channel:int = 3,
+                    width:int = 32,
+                    height:int = 32,
+                    transform=None
+                ):
+        
         super().__init__()
 
         self.transform = transform

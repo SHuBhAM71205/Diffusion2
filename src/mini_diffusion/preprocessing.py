@@ -13,7 +13,7 @@ def setup_config():
     
     path_group = parser.add_argument_group("Paths")
     
-    path_group.add_argument("--config",type=str,default="./config/base.yaml",help="Pass the path to the Config file")
+    path_group.add_argument("--config",type=str,default="./configs/base.yaml",help="Pass the path to the Config file")
     
     args = parser.parse_args()
     
@@ -65,7 +65,8 @@ if __name__ == "__main__":
     config = load_config(args.config)
     
     preprocessing(config)
-    
+    # the above function basically make the file of .bin in the loc provided in config files 
+    # so the below is able to access the .bin
     with open(f"./data/offset.bin","rb") as f,\
         open(f"./data/data.bin","rb") as img_bin:
         
