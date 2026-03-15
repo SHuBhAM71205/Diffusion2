@@ -1770,3 +1770,53 @@ batch_size=1 epochs=2000 learning_rate=0.0001 device='cuda' data_dir='./data' sa
 [2026-03-15 11:04:52] INFO: Using device: cuda
 [2026-03-15 11:04:52] ERROR: [Errno 2] No such file or directory: './saves/a.pth'
 [2026-03-15 11:04:52] INFO: Defaulting to reinit random UNET model
+[2026-03-15 12:12:28] INFO: Config used:
+batch_size=1 epochs=2000 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-03-15 12:12:28] INFO: Using device: cuda
+[2026-03-15 12:12:28] ERROR: [Errno 2] No such file or directory: './saves/a.pth'
+[2026-03-15 12:12:28] INFO: Defaulting to reinit random UNET model
+[2026-03-15 12:14:17] INFO: Config used:
+batch_size=1 epochs=50 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-03-15 12:14:17] INFO: Using device: cuda
+[2026-03-15 12:14:17] ERROR: [Errno 2] No such file or directory: './saves/a.pth'
+[2026-03-15 12:14:17] INFO: Defaulting to reinit random UNET model
+[2026-03-15 12:14:19] INFO: epoch: 0 Loss: 1.0980630755424499
+[2026-03-15 12:14:19] INFO: epoch: 0 Loss: 0.9933163046836853
+[2026-03-15 12:14:19] INFO: epoch: 0 Loss: 0.9478690207004548
+[2026-03-15 12:14:20] INFO: epoch: 0 Loss: 0.9049080610275269
+[2026-03-15 12:14:20] INFO: epoch: 0 Loss: 0.9211503148078919
+[2026-03-15 12:14:20] INFO: epoch: 0 Loss: 0.8259682893753052
+[2026-03-15 12:14:21] INFO: epoch: 0 Loss: 0.7848915755748749
+[2026-03-15 12:14:21] INFO: epoch: 0 Loss: 0.7823061585426331
+[2026-03-15 12:14:22] INFO: epoch: 0 Loss: 0.7458334028720855
+[2026-03-15 12:14:22] INFO: epoch: 0 Loss: 0.6846531808376313
+[2026-03-15 12:14:22] INFO: epoch: 0 Loss: 0.6835636913776397
+[2026-03-15 12:14:23] INFO: epoch: 0 Loss: 0.6956172168254853
+[2026-03-15 12:14:23] INFO: epoch: 0 Loss: 0.6150815546512604
+[2026-03-15 12:14:24] INFO: epoch: 0 Loss: 0.5842519760131836
+[2026-03-15 12:14:24] INFO: epoch: 0 Loss: 0.6072571814060211
+[2026-03-15 12:14:24] INFO: epoch: 0 Loss: 0.5584826976060867
+[2026-03-15 12:14:25] INFO: epoch: 0 Loss: 0.5746959656476974
+[2026-03-15 12:14:26] INFO: epoch: 0 Loss: 0.5492920458316803
+[2026-03-15 12:14:26] INFO: epoch: 0 Loss: 0.4786164849996567
+[2026-03-15 12:14:26] INFO: epoch: 0 Loss: 0.5516166239976883
+[2026-03-15 12:14:27] INFO: epoch: 0 Loss: 0.4210479736328125
+[2026-03-15 12:14:27] INFO: epoch: 0 Loss: 0.5243121653795242
+[2026-03-15 12:14:28] INFO: epoch: 0 Loss: 0.41030181646347047
+[2026-03-15 12:14:28] INFO: epoch: 0 Loss: 0.3863570988178253
+[2026-03-15 12:14:28] INFO: epoch: 0 Loss: 0.4531990349292755
+[2026-03-15 12:14:29] INFO: epoch: 0 Loss: 0.3840117007493973
+[2026-03-15 12:14:29] INFO: epoch: 0 Loss: 0.3705234169960022
+[2026-03-15 12:14:30] INFO: epoch: 0 Loss: 0.40640535652637483
+[2026-03-15 12:14:30] INFO: epoch: 0 Loss: 0.3995847672224045
+[2026-03-15 12:14:30] INFO: epoch: 0 Loss: 0.3186574012041092
+[2026-03-15 12:14:31] INFO: epoch: 0 Loss: 0.3886251837015152
+[2026-03-15 12:14:31] INFO: epoch: 0 Loss: 0.30294459164142606
+[2026-03-15 12:14:32] INFO: epoch: 0 Loss: 0.3085875451564789
+[2026-03-15 12:14:32] INFO: epoch: 0 Loss: 0.349722808599472
+[2026-03-15 12:14:33] INFO: epoch: 0 Loss: 0.29709848165512087
+[2026-03-15 12:14:36] INFO: Config used:
+batch_size=64 epochs=50 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-03-15 12:14:36] INFO: Using device: cuda
+[2026-03-15 12:14:37] ERROR: [Errno 2] No such file or directory: './saves/a.pth'
+[2026-03-15 12:14:37] INFO: Defaulting to reinit random UNET model

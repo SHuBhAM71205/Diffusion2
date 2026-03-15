@@ -36,6 +36,7 @@ def train(config: Config):
     # init models
     unet = UNet(config.model).to(device)
     ema_unet = UNet(config.model).to(device)
+    ema_unet.load_state_dict(unet.state_dict())
     ema_unet.eval()
     diffusion = Diffusion(config=config, device=device)
     # init transform
