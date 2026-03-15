@@ -5,6 +5,9 @@ A clean, educational implementation of a **diffusion-based generative model** fr
 8 -2 - 26 Right now Diffusion is not Diffusing
 
 15 - 03- 26 Now its atleast diffusing ha ha ha 
+
+
+
 ---
 
 ## 📋 Table of Contents
