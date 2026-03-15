@@ -4,8 +4,8 @@ diffusion:
   beta_end: 0.02
 
 training:
-  batch_size: 1
-  epochs: 2000
+  batch_size: 64
+  epochs: 50
   learning_rate: 1e-4
   device: "cuda"
   data_dir: "./data"
@@ -33,7 +33,7 @@ model:
   down_channels : [32, 64, 128, 256]
   mid_channels : [256, 256, 128]
   down_sample : [True, True, False]
-  time_emb_dim : 512
+  time_emb_dim : 32
   num_down_layers : 2
   num_mid_layers : 2
   num_up_layers : 2
