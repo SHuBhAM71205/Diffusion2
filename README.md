@@ -21,6 +21,12 @@ Right now Diffusion is not Diffusing
 
 ---
 
+
+# Some Samples
+![NO IMG](./Samples/15-3-26/result_15-3-26.png)
+![NO IMG](./Samples/15-3-26/result_2_15-3-26.png)
+
+
 ## ✨ Features
 
 ✅ **From-Scratch Implementation** – UNet-based diffusion model without third-party frameworks  
@@ -104,14 +110,22 @@ Diffusion2/
 git clone <repo-url>
 cd Diffusion2
 
+
+
 # Create and activate virtual environment
 python -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+
+--OR
+
+uv sync
 
 # Install dependencies
 pip install -e .
 # or manually:
 pip install torch torchvision numpy pydantic pyyaml tqdm fastapi uvicorn pillow
+
+if using uv no need to manually install 
 ```
 
 ### 2️⃣ **Train the Model**
@@ -147,13 +161,12 @@ The `serve` mode still starts the FastAPI server, but you can also call uvicorn 
 ```bash
 python main.py serve
 # or directly:
-uvicorn app.app:app --reload --host 0.0.0.0 --port 8000
+uv run uvicorn app.app:app --reload --host 0.0.0.0 --port 8000
 ```
 
 API is now live at `http://localhost:8000`
 
 **Endpoints:**
-- `GET /` – Health check
 - `GET /generate` – Generate and return PNG image
 
 ```bash
@@ -167,29 +180,53 @@ curl -s http://localhost:8000/generate --output generated.png
 
 Edit `configs/base.yaml` to tune hyperparameters:
 
-```yaml
-model:
-  image_size: 28              # Input/output image resolution
-  in_channels: 1              # 1 for grayscale, 3 for RGB
-  base_channels: 64           # Base channel count for UNet
 
-diffusion:
-  timesteps: 1000             # Number of noise steps in diffusion
-  beta_start: 0.0001          # Noise schedule start
-  beta_end: 0.02              # Noise schedule end
+    diffusion:
+      timesteps: 1000
+      beta_start: 0.0001
+      beta_end: 0.02
 
-training:
-  batch_size: 64              # Batch size per iteration
-  epochs: 10                  # Number of training epochs
-  learning_rate: 1e-4         # AdamW optimizer LR
-  device: "cuda"              # "cuda" or "cpu"
-```
+    training:
+      batch_size: 32
+      epochs: 100
+      learning_rate: 1e-4
+      device: "cuda"
+      data_dir: "./data"
+      save_path: "./saves"
+      num_workers: 4
+      logs: "./logs/train-logs"
 
----
+    inference:
+      model_path: "./saves/a.pth"
+      device: "cuda"
+      logs: "./logs/inference-logs"
+
+    api:
+      host: "localhost"
+      port: 8000
+      reload: True
+
+    preprocessing:
+      data_dir: "./data/plane"
+      save_dir: "./data"
+
+    model:
+      im_channels : 3
+      im_size : 32
+      down_channels : [64, 128, 256, 512]
+      mid_channels : [512, 512, 256]
+      down_sample : [True, True, False]
+      time_emb_dim : 128
+      num_down_layers : 2
+      num_mid_layers : 2
+      num_up_layers : 2
+      num_heads : 8
+
+
 
 ## 🏗️ Architecture
 
-### **UNet Model** (model.py)
+### **UNet Model** (model.py) This model is used from [UNET]([text](https://github.com/explainingai-code/DDPM-Pytorch)) of Explained AI video
 
 - **Sinusoidal Time Embedding** – Encodes timestep `t` as positional embeddings
 - **Encoder (Down-sampling)** – 2 convolutional down-blocks with max-pooling
