@@ -1,8 +1,3 @@
-model:
-  image_size: 128
-  in_channels: 3
-  base_channels: 64
-
 diffusion:
   timesteps: 1000
   beta_start: 0.0001
@@ -31,4 +26,15 @@ api:
 preprocessing:
   data_dir: "./data/plane"
   save_dir: "./data"
-  
+
+model:
+  im_channels : 3
+  im_size : 32
+  down_channels : [32, 64, 128, 256]
+  mid_channels : [256, 256, 128]
+  down_sample : [True, True, False]
+  time_emb_dim : 512
+  num_down_layers : 2
+  num_mid_layers : 2
+  num_up_layers : 2
+  num_heads : 4

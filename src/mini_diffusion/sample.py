@@ -21,11 +21,11 @@ def sample(config:Config| None = None):
         
     model_path=config.inference.model_path
     device = config.inference.device if torch.cuda.is_available() else "cpu"
-    img_dim = config.model.image_size
+    img_dim = config.model.im_size
     logger = setup_logger(config.inference.logs)
     print(f"Using device: {device}")
 
-    unet = UNet(in_channels=config.model.in_channels,base_channels=config.model.base_channels)
+    unet = UNet(config.model_config)
     try:
         chkpt = torch.load(model_path)
         
@@ -64,7 +64,7 @@ def sample(config:Config| None = None):
             t = torch.full((x_t.size(0),), i, device=device, dtype=torch.long)
 
             eps = unet(x_t, t)
-            # print("eps std:", eps.std().item())
+
             alpha_t = diffusion.alpha[i]
             alpha_hat_t = diffusion.alpha_hat[i]
             beta_t = diffusion.beta[i]
@@ -84,7 +84,8 @@ def sample(config:Config| None = None):
 
                 x_t = mean + torch.sqrt(posterior_var) * noise
             else:
-                x_t = mean
+                x_t = (x_t - torch.sqrt(1 - alpha_hat_t) * eps) / torch.sqrt(alpha_hat_t)
+
             
             print(f"Step {i}: mean={x_t.mean():.4f}, std={x_t.std():.4f}")
 

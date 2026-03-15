@@ -33,8 +33,8 @@ def preprocessing(config: Config):
         [
             v2.ToImage(),
             v2.RGB(),
-            v2.Resize((config.model.image_size,config.model.image_size)),
-            v2.CenterCrop((config.model.image_size,config.model.image_size)),
+            v2.Resize((config.model.im_size,config.model.im_size)),
+            v2.CenterCrop((config.model.im_size,config.model.im_size)),
             v2.ToDtype(torch.uint8,scale=False)
         ]
     )

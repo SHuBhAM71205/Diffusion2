@@ -20,8 +20,8 @@ class Diffusion(nn.Module):
 
         s = 0.008  # must be calculateds just for testing
 
-        tbyT = torch.arange(start=0, end=self.config.timesteps+1, step=1, device=device) / self.config.timesteps
-        t = (tbyT + s )/ 1+s
+        tbyT = torch.arange(start=0, end=self.config.timesteps, step=1, device=device) / self.config.timesteps
+        t = (tbyT + s )/ (1+s)
         t = t * (torch.pi/2)
 
         cosine = torch.cos(t) ** 2
@@ -30,7 +30,10 @@ class Diffusion(nn.Module):
         
         beta = 1 - (alpha_hat[1:] /alpha_hat[:-1])
         
+        beta = torch.cat([torch.tensor([0.02], device=device),beta])
         beta = beta.clamp(0.0001, 0.9999)
+        
+        
         
         beta = beta.to(device)
         
@@ -42,7 +45,7 @@ class Diffusion(nn.Module):
 
         self.register_buffer("beta", beta)
         self.register_buffer("alpha", alpha)
-        self.register_buffer("alpha_hat", alpha_hat[:-1])
+        self.register_buffer("alpha_hat", alpha_hat)
 
     def sample_time_stamp(self, batch_size):
 

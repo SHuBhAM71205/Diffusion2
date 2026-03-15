@@ -1,12 +1,19 @@
 import yaml
 from pydantic import BaseModel # type: ignore
-
+from typing import List
 # class ModelConfig(BaseModel):
     
 class ModelConfig(BaseModel):
-    image_size: int
-    in_channels: int
-    base_channels: int
+    im_channels : int
+    im_size : int
+    down_channels : List[int]
+    mid_channels : List[int]
+    down_sample : List[bool]
+    time_emb_dim : int
+    num_down_layers : int
+    num_mid_layers : int
+    num_up_layers : int
+    num_heads : int
 
 
 class DiffusionConfig(BaseModel):

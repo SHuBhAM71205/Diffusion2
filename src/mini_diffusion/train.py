@@ -34,8 +34,8 @@ def train(config: Config):
 
     logger.info(f"Using device: {device}")
     # init models
-    unet = UNet(in_channels=config.model.in_channels,base_channels=config.model.base_channels).to(device)
-    ema_unet = UNet(in_channels=config.model.in_channels,base_channels=config.model.base_channels).to(device)
+    unet = UNet(config.model).to(device)
+    ema_unet = UNet(config.model).to(device)
     ema_unet.eval()
     diffusion = Diffusion(config=config, device=device)
     # init transform
@@ -61,8 +61,8 @@ def train(config: Config):
     dataset = Plane(
                     train_cfg.data_dir,
                     channel=3,
-                    width=config.model.image_size,
-                    height=config.model.image_size,
+                    width=config.model.im_size,
+                    height=config.model.im_size,
                     transform=trans
                 )
 
