@@ -21,9 +21,6 @@ from Dataset.plane import Plane
 # import matplotlib.pyplot as plt
 ema_decay = 0.999
 
-def v_pred_loss(v,v_pred,eps):
-    
-
 def train(config: Config):
 
     # loading train_config
@@ -121,10 +118,16 @@ def train(config: Config):
                 timestamp = diffusion.sample_time_stamp(batch_size)
 
                 x_t, eps = diffusion.add_noise(x, timestamp)
+            
+            alpha_t = diffusion.alpha[timestamp]
+            sqrt_alpha_t = torch.sqrt(alpha_t)
+            sqrt_one_minus_alpha_t = torch.sqrt(1 - alpha_t)
 
+            v = sqrt_alpha_t * eps - sqrt_one_minus_alpha_t * x
+            
             predict_eps = unet(x_t, timestamp)
 
-            loss = loss_fn(eps, predict_eps)
+            loss = loss_fn(v, predict_eps)
 
             losses.append(loss.item())
 
