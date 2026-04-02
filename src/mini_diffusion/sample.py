@@ -5,6 +5,7 @@ import argparse
 from mini_diffusion.config import load_config, Config
 from mini_diffusion.model import UNet
 from mini_diffusion.diffusion import Diffusion
+from mini_diffusion.device import resolve_device
 
 import numpy as np
 from PIL import Image
@@ -39,7 +40,9 @@ def sample(config:Config| None = None):
         config = load_config("./configs/base.yaml")
         
     model_path=config.inference.model_path
-    device = config.inference.device if torch.cuda.is_available() else "cpu"
+    device = resolve_device(config.inference.device, strict=True)
+    
+    
     img_dim = config.model.im_size
     logger = setup_logger(config.inference.logs)
     print(f"Using device: {device}")
@@ -49,8 +52,9 @@ def sample(config:Config| None = None):
         chkpt = torch.load(model_path, map_location=device)
 
         state_dict_key = "unet" if "unet" in chkpt else "ema_unet"
+        print(f"state_dct_key{state_dict_key}")
         unet.load_state_dict(chkpt[state_dict_key])
-        unet.to(device)
+        unet = unet.to(device)
         logger.info(f"Loaded checkpoint from {model_path} (weights: {state_dict_key})")
 
     except Exception as e:
@@ -123,10 +127,10 @@ def sample(config:Config| None = None):
                 ax.axis('off')
                 plot_idx += 1
                 
-            print(
-                f"Step {i}: mean={x_t.mean():.4f}, std={x_t.std():.4f} "
-                f"min={x_t.min()} max = {x_t.max()}"
-            )
+            # print(
+            #     f"Step {i}: mean={x_t.mean():.4f}, std={x_t.std():.4f} "
+            #     f"min={x_t.min()} max = {x_t.max()}"
+            # )
 
         img = x_t[0].permute(1, 2, 0).cpu().numpy()
 

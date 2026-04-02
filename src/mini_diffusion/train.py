@@ -7,6 +7,7 @@ from mini_diffusion.config import Config, load_config, TrainingConfig
 
 from mini_diffusion.model import UNet
 from mini_diffusion.diffusion import Diffusion
+from mini_diffusion.device import resolve_device
 
 import argparse
 
@@ -20,12 +21,15 @@ from Dataset.plane import Plane
 # import matplotlib.pyplot as plt
 ema_decay = 0.999
 
+def v_pred_loss(v,v_pred,eps):
+    
+
 def train(config: Config):
 
     # loading train_config
     train_cfg: TrainingConfig = config.training
     # seeing up the config constants
-    device = train_cfg.device if torch.cuda.is_available() else "cpu"
+    device = resolve_device(train_cfg.device, strict=False)
     epochs = train_cfg.epochs
     batch_size = train_cfg.batch_size
     logger = setup_logger(train_cfg.logs)
@@ -83,6 +87,7 @@ def train(config: Config):
     # axes = axes.flatten()
 
     loss_fn = torch.nn.MSELoss()
+    
     
     optimizer = torch.optim.AdamW(
         unet.parameters(), lr=train_cfg.learning_rate)
