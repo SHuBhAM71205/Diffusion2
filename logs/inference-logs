@@ -5764,3 +5764,141 @@
 [2026-04-02 21:21:10] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=3.576279e-07
 [2026-04-02 21:21:12] INFO: step= 900 x_mean= -0.0995 x_std=  0.8297 eps_std=  0.9882 eps/x= 1.19105 x0_mean= -0.4739 x0_std=  1.3721
 [2026-04-02 21:21:12] INFO: step= 800 x_mean= -0.1412 x_std=  0.8345 eps_std=  0.9861 eps/x= 1.18173 x0_mean= -0.4104 x0_std=  0.4993
+[2026-04-02 22:16:35] INFO: Loaded checkpoint from ./saves/a.pth (weights: unet)
+[2026-04-02 22:16:35] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=3.576279e-07
+[2026-04-02 22:16:36] INFO: step= 900 x_mean= -0.4222 x_std=  0.8467 eps_std=  1.0059 eps/x= 1.18801 x0_mean= -2.4731 x0_std=  1.4251
+[2026-04-02 22:16:37] INFO: step= 800 x_mean= -0.7142 x_std=  0.8485 eps_std=  0.9998 eps/x= 1.17830 x0_mean= -2.1956 x0_std=  0.5199
+[2026-04-02 22:16:38] INFO: step= 700 x_mean= -0.9777 x_std=  0.7935 eps_std=  0.9736 eps/x= 1.22705 x0_mean= -2.0848 x0_std=  0.3138
+[2026-04-02 22:16:39] INFO: step= 600 x_mean= -1.2348 x_std=  0.7465 eps_std=  0.9739 eps/x= 1.30463 x0_mean= -2.0513 x0_std=  0.1939
+[2026-04-02 22:16:40] INFO: step= 500 x_mean= -1.4693 x_std=  0.6692 eps_std=  0.9630 eps/x= 1.43908 x0_mean= -2.0441 x0_std=  0.1360
+[2026-04-02 22:16:41] INFO: step= 400 x_mean= -1.6555 x_std=  0.5790 eps_std=  0.9504 eps/x= 1.64139 x0_mean= -2.0282 x0_std=  0.1120
+[2026-04-02 22:16:41] INFO: step= 300 x_mean= -1.8050 x_std=  0.4685 eps_std=  0.9217 eps/x= 1.96745 x0_mean= -2.0207 x0_std=  0.1088
+[2026-04-02 22:16:42] INFO: step= 200 x_mean= -1.9161 x_std=  0.3582 eps_std=  0.9040 eps/x= 2.52363 x0_mean= -2.0194 x0_std=  0.1129
+[2026-04-02 22:16:43] INFO: step= 100 x_mean= -1.9822 x_std=  0.2315 eps_std=  0.8806 eps/x= 3.80453 x0_mean= -2.0159 x0_std=  0.1104
+[2026-04-02 22:16:44] INFO: step=   9 x_mean= -2.0244 x_std=  0.1006 eps_std=  0.7952 eps/x= 7.90583 x0_mean= -2.0270 x0_std=  0.0899
+[2026-04-02 22:16:44] INFO: step=   8 x_mean= -2.0244 x_std=  0.0993 eps_std=  0.7960 eps/x= 8.01598 x0_mean= -2.0268 x0_std=  0.0896
+[2026-04-02 22:16:44] INFO: step=   7 x_mean= -2.0248 x_std=  0.0979 eps_std=  0.8000 eps/x= 8.17470 x0_mean= -2.0270 x0_std=  0.0892
+[2026-04-02 22:16:44] INFO: step=   6 x_mean= -2.0252 x_std=  0.0963 eps_std=  0.8058 eps/x= 8.36848 x0_mean= -2.0273 x0_std=  0.0886
+[2026-04-02 22:16:44] INFO: step=   5 x_mean= -2.0256 x_std=  0.0948 eps_std=  0.8049 eps/x= 8.49118 x0_mean= -2.0275 x0_std=  0.0881
+[2026-04-02 22:16:44] INFO: step=   4 x_mean= -2.0260 x_std=  0.0932 eps_std=  0.7982 eps/x= 8.56058 x0_mean= -2.0276 x0_std=  0.0876
+[2026-04-02 22:16:44] INFO: step=   3 x_mean= -2.0264 x_std=  0.0916 eps_std=  0.7894 eps/x= 8.61797 x0_mean= -2.0278 x0_std=  0.0871
+[2026-04-02 22:16:44] INFO: step=   2 x_mean= -2.0270 x_std=  0.0897 eps_std=  0.7908 eps/x= 8.81174 x0_mean= -2.0281 x0_std=  0.0863
+[2026-04-02 22:16:44] INFO: step=   1 x_mean= -2.0279 x_std=  0.0873 eps_std=  0.8542 eps/x= 9.78208 x0_mean= -2.0287 x0_std=  0.0852
+[2026-04-02 22:16:44] INFO: step=   0 x_mean= -2.0279 x_std=  0.0873 eps_std=  0.6686 eps/x= 7.65616 x0_mean= -2.0279 x0_std=  0.0873
+[2026-04-02 22:16:44] INFO: (32, 32, 3) -2.027859687805176 0.08731052279472351
+[2026-04-02 22:16:44] INFO: (32, 32, 3) 125.44661458333333 11.138586693964095
+[2026-04-02 22:16:53] INFO: Loaded checkpoint from ./saves/a.pth (weights: unet)
+[2026-04-02 22:16:53] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=3.576279e-07
+[2026-04-02 22:16:54] INFO: step= 900 x_mean= -0.1784 x_std=  0.8487 eps_std=  1.0027 eps/x= 1.18138 x0_mean= -1.0672 x0_std=  1.5571
+[2026-04-02 22:16:55] INFO: step= 800 x_mean= -0.3062 x_std=  0.8456 eps_std=  0.9762 eps/x= 1.15437 x0_mean= -0.9682 x0_std=  0.8115
+[2026-04-02 22:16:56] INFO: step= 700 x_mean= -0.4248 x_std=  0.8484 eps_std=  0.9864 eps/x= 1.16259 x0_mean= -0.9328 x0_std=  0.5962
+[2026-04-02 22:16:57] INFO: step= 600 x_mean= -0.5371 x_std=  0.8358 eps_std=  0.9953 eps/x= 1.19084 x0_mean= -0.9136 x0_std=  0.5631
+[2026-04-02 22:16:58] INFO: step= 500 x_mean= -0.6484 x_std=  0.7898 eps_std=  0.9888 eps/x= 1.25189 x0_mean= -0.9160 x0_std=  0.5341
+[2026-04-02 22:16:59] INFO: step= 400 x_mean= -0.7406 x_std=  0.7105 eps_std=  0.9747 eps/x= 1.37185 x0_mean= -0.9198 x0_std=  0.4906
+[2026-04-02 22:17:00] INFO: step= 300 x_mean= -0.8166 x_std=  0.6344 eps_std=  0.9515 eps/x= 1.49988 x0_mean= -0.9247 x0_std=  0.4811
+[2026-04-02 22:17:01] INFO: step= 200 x_mean= -0.8816 x_std=  0.5525 eps_std=  0.9501 eps/x= 1.71965 x0_mean= -0.9355 x0_std=  0.4542
+[2026-04-02 22:17:02] INFO: step= 100 x_mean= -0.9234 x_std=  0.4823 eps_std=  0.9445 eps/x= 1.95828 x0_mean= -0.9414 x0_std=  0.4429
+[2026-04-02 22:17:02] INFO: step=   9 x_mean= -0.9475 x_std=  0.4341 eps_std=  0.8606 eps/x= 1.98270 x0_mean= -0.9486 x0_std=  0.4319
+[2026-04-02 22:17:03] INFO: step=   8 x_mean= -0.9477 x_std=  0.4336 eps_std=  0.8480 eps/x= 1.95553 x0_mean= -0.9486 x0_std=  0.4318
+[2026-04-02 22:17:03] INFO: step=   7 x_mean= -0.9477 x_std=  0.4335 eps_std=  0.8390 eps/x= 1.93529 x0_mean= -0.9486 x0_std=  0.4320
+[2026-04-02 22:17:03] INFO: step=   6 x_mean= -0.9479 x_std=  0.4333 eps_std=  0.8321 eps/x= 1.92027 x0_mean= -0.9487 x0_std=  0.4320
+[2026-04-02 22:17:03] INFO: step=   5 x_mean= -0.9484 x_std=  0.4330 eps_std=  0.8248 eps/x= 1.90476 x0_mean= -0.9490 x0_std=  0.4320
+[2026-04-02 22:17:03] INFO: step=   4 x_mean= -0.9484 x_std=  0.4327 eps_std=  0.8109 eps/x= 1.87413 x0_mean= -0.9490 x0_std=  0.4319
+[2026-04-02 22:17:03] INFO: step=   3 x_mean= -0.9485 x_std=  0.4327 eps_std=  0.7928 eps/x= 1.83250 x0_mean= -0.9490 x0_std=  0.4321
+[2026-04-02 22:17:03] INFO: step=   2 x_mean= -0.9486 x_std=  0.4326 eps_std=  0.7705 eps/x= 1.78098 x0_mean= -0.9490 x0_std=  0.4323
+[2026-04-02 22:17:03] INFO: step=   1 x_mean= -0.9489 x_std=  0.4326 eps_std=  0.7627 eps/x= 1.76314 x0_mean= -0.9492 x0_std=  0.4325
+[2026-04-02 22:17:03] INFO: step=   0 x_mean= -0.9489 x_std=  0.4326 eps_std=  0.4362 eps/x= 1.00837 x0_mean= -0.9489 x0_std=  0.4326
+[2026-04-02 22:17:03] INFO: (32, 32, 3) -0.9489317536354065 0.4324913024902344
+[2026-04-02 22:17:03] INFO: (32, 32, 3) 158.3671875 73.98120057097734
+[2026-04-02 22:17:08] INFO: Loaded checkpoint from ./saves/a.pth (weights: unet)
+[2026-04-02 22:17:08] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=3.576279e-07
+[2026-04-02 22:17:10] INFO: step= 900 x_mean= -0.1450 x_std=  0.8379 eps_std=  0.9973 eps/x= 1.19031 x0_mean= -0.9455 x0_std=  1.4348
+[2026-04-02 22:17:11] INFO: step= 800 x_mean= -0.2527 x_std=  0.8306 eps_std=  0.9786 eps/x= 1.17817 x0_mean= -0.8453 x0_std=  0.6358
+[2026-04-02 22:17:12] INFO: step= 700 x_mean= -0.3710 x_std=  0.8181 eps_std=  0.9831 eps/x= 1.20167 x0_mean= -0.8481 x0_std=  0.4413
+[2026-04-02 22:17:12] INFO: step= 600 x_mean= -0.4926 x_std=  0.7893 eps_std=  0.9884 eps/x= 1.25224 x0_mean= -0.8563 x0_std=  0.4089
+[2026-04-02 22:17:13] INFO: step= 500 x_mean= -0.6043 x_std=  0.7225 eps_std=  0.9775 eps/x= 1.35286 x0_mean= -0.8722 x0_std=  0.3721
+[2026-04-02 22:17:14] INFO: step= 400 x_mean= -0.6808 x_std=  0.6543 eps_std=  0.9759 eps/x= 1.49157 x0_mean= -0.8600 x0_std=  0.3749
+[2026-04-02 22:17:15] INFO: step= 300 x_mean= -0.7574 x_std=  0.5622 eps_std=  0.9546 eps/x= 1.69784 x0_mean= -0.8671 x0_std=  0.3840
+[2026-04-02 22:17:16] INFO: step= 200 x_mean= -0.8212 x_std=  0.4827 eps_std=  0.9365 eps/x= 1.94040 x0_mean= -0.8763 x0_std=  0.3972
+[2026-04-02 22:17:17] INFO: step= 100 x_mean= -0.8648 x_std=  0.4313 eps_std=  0.9369 eps/x= 2.17204 x0_mean= -0.8829 x0_std=  0.4066
+[2026-04-02 22:17:18] INFO: step=   9 x_mean= -0.8843 x_std=  0.4120 eps_std=  0.8166 eps/x= 1.98214 x0_mean= -0.8853 x0_std=  0.4119
+[2026-04-02 22:17:18] INFO: step=   8 x_mean= -0.8844 x_std=  0.4118 eps_std=  0.8041 eps/x= 1.95265 x0_mean= -0.8853 x0_std=  0.4118
+[2026-04-02 22:17:18] INFO: step=   7 x_mean= -0.8848 x_std=  0.4117 eps_std=  0.7911 eps/x= 1.92144 x0_mean= -0.8857 x0_std=  0.4118
+[2026-04-02 22:17:18] INFO: step=   6 x_mean= -0.8851 x_std=  0.4118 eps_std=  0.7723 eps/x= 1.87537 x0_mean= -0.8858 x0_std=  0.4119
+[2026-04-02 22:17:18] INFO: step=   5 x_mean= -0.8853 x_std=  0.4118 eps_std=  0.7545 eps/x= 1.83213 x0_mean= -0.8860 x0_std=  0.4120
+[2026-04-02 22:17:18] INFO: step=   4 x_mean= -0.8853 x_std=  0.4121 eps_std=  0.7343 eps/x= 1.78191 x0_mean= -0.8859 x0_std=  0.4123
+[2026-04-02 22:17:18] INFO: step=   3 x_mean= -0.8854 x_std=  0.4121 eps_std=  0.6897 eps/x= 1.67339 x0_mean= -0.8859 x0_std=  0.4124
+[2026-04-02 22:17:18] INFO: step=   2 x_mean= -0.8856 x_std=  0.4123 eps_std=  0.6472 eps/x= 1.56958 x0_mean= -0.8861 x0_std=  0.4125
+[2026-04-02 22:17:18] INFO: step=   1 x_mean= -0.8859 x_std=  0.4124 eps_std=  0.5762 eps/x= 1.39744 x0_mean= -0.8862 x0_std=  0.4124
+[2026-04-02 22:17:18] INFO: step=   0 x_mean= -0.8859 x_std=  0.4124 eps_std=  0.1602 eps/x= 0.38854 x0_mean= -0.8859 x0_std=  0.4124
+[2026-04-02 22:17:18] INFO: (32, 32, 3) -0.8859105110168457 0.4122923016548157
+[2026-04-02 22:17:18] INFO: (32, 32, 3) 139.6259765625 86.30480830867633
+[2026-04-02 22:17:26] INFO: Loaded checkpoint from ./saves/a.pth (weights: unet)
+[2026-04-02 22:17:26] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=3.576279e-07
+[2026-04-02 22:17:27] INFO: step= 900 x_mean= -0.3969 x_std=  0.8131 eps_std=  0.9868 eps/x= 1.21362 x0_mean= -2.3375 x0_std=  1.4383
+[2026-04-02 22:17:28] INFO: step= 800 x_mean= -0.7730 x_std=  0.8105 eps_std=  0.9790 eps/x= 1.20783 x0_mean= -2.3615 x0_std=  0.5477
+[2026-04-02 22:17:29] INFO: step= 700 x_mean= -1.0686 x_std=  0.7929 eps_std=  0.9756 eps/x= 1.23047 x0_mean= -2.2616 x0_std=  0.2950
+[2026-04-02 22:17:30] INFO: step= 600 x_mean= -1.3328 x_std=  0.7412 eps_std=  0.9735 eps/x= 1.31341 x0_mean= -2.1991 x0_std=  0.1769
+[2026-04-02 22:17:31] INFO: step= 500 x_mean= -1.5574 x_std=  0.6633 eps_std=  0.9596 eps/x= 1.44662 x0_mean= -2.1550 x0_std=  0.1293
+[2026-04-02 22:17:32] INFO: step= 400 x_mean= -1.7802 x_std=  0.5646 eps_std=  0.9383 eps/x= 1.66177 x0_mean= -2.1702 x0_std=  0.0998
+[2026-04-02 22:17:33] INFO: step= 300 x_mean= -1.9422 x_std=  0.4544 eps_std=  0.9056 eps/x= 1.99305 x0_mean= -2.1659 x0_std=  0.0999
+[2026-04-02 22:17:34] INFO: step= 200 x_mean= -2.0623 x_std=  0.3492 eps_std=  0.8790 eps/x= 2.51728 x0_mean= -2.1687 x0_std=  0.1103
+[2026-04-02 22:17:35] INFO: step= 100 x_mean= -2.1442 x_std=  0.2236 eps_std=  0.8277 eps/x= 3.70127 x0_mean= -2.1786 x0_std=  0.1092
+[2026-04-02 22:17:36] INFO: step=   9 x_mean= -2.1878 x_std=  0.1039 eps_std=  0.7677 eps/x= 7.38849 x0_mean= -2.1902 x0_std=  0.0932
+[2026-04-02 22:17:36] INFO: step=   8 x_mean= -2.1879 x_std=  0.1025 eps_std=  0.7679 eps/x= 7.49360 x0_mean= -2.1902 x0_std=  0.0928
+[2026-04-02 22:17:36] INFO: step=   7 x_mean= -2.1882 x_std=  0.1010 eps_std=  0.7727 eps/x= 7.65031 x0_mean= -2.1902 x0_std=  0.0923
+[2026-04-02 22:17:36] INFO: step=   6 x_mean= -2.1884 x_std=  0.0995 eps_std=  0.7791 eps/x= 7.83122 x0_mean= -2.1904 x0_std=  0.0918
+[2026-04-02 22:17:36] INFO: step=   5 x_mean= -2.1891 x_std=  0.0981 eps_std=  0.7801 eps/x= 7.95564 x0_mean= -2.1908 x0_std=  0.0913
+[2026-04-02 22:17:36] INFO: step=   4 x_mean= -2.1896 x_std=  0.0965 eps_std=  0.7784 eps/x= 8.07070 x0_mean= -2.1911 x0_std=  0.0908
+[2026-04-02 22:17:36] INFO: step=   3 x_mean= -2.1902 x_std=  0.0947 eps_std=  0.7698 eps/x= 8.12563 x0_mean= -2.1915 x0_std=  0.0901
+[2026-04-02 22:17:36] INFO: step=   2 x_mean= -2.1907 x_std=  0.0928 eps_std=  0.7735 eps/x= 8.33776 x0_mean= -2.1918 x0_std=  0.0893
+[2026-04-02 22:17:36] INFO: step=   1 x_mean= -2.1916 x_std=  0.0903 eps_std=  0.8337 eps/x= 9.23339 x0_mean= -2.1924 x0_std=  0.0881
+[2026-04-02 22:17:36] INFO: step=   0 x_mean= -2.1916 x_std=  0.0903 eps_std=  0.6731 eps/x= 7.45530 x0_mean= -2.1916 x0_std=  0.0903
+[2026-04-02 22:17:36] INFO: (32, 32, 3) -2.1915836334228516 0.09027470648288727
+[2026-04-02 22:17:36] INFO: (32, 32, 3) 104.58072916666667 11.522283369699311
+[2026-04-02 22:17:40] INFO: Loaded checkpoint from ./saves/a.pth (weights: unet)
+[2026-04-02 22:17:40] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=3.576279e-07
+[2026-04-02 22:17:41] INFO: step= 900 x_mean= -0.2441 x_std=  0.8524 eps_std=  1.0056 eps/x= 1.17977 x0_mean= -1.4508 x0_std=  1.5360
+[2026-04-02 22:17:42] INFO: step= 800 x_mean= -0.4416 x_std=  0.8727 eps_std=  1.0067 eps/x= 1.15358 x0_mean= -1.3867 x0_std=  0.6513
+[2026-04-02 22:17:43] INFO: step= 700 x_mean= -0.6486 x_std=  0.8472 eps_std=  1.0024 eps/x= 1.18316 x0_mean= -1.4081 x0_std=  0.4021
+[2026-04-02 22:17:44] INFO: step= 600 x_mean= -0.8094 x_std=  0.7901 eps_std=  0.9954 eps/x= 1.25985 x0_mean= -1.3689 x0_std=  0.3104
+[2026-04-02 22:17:45] INFO: step= 500 x_mean= -0.9483 x_std=  0.7111 eps_std=  0.9766 eps/x= 1.37345 x0_mean= -1.3415 x0_std=  0.2637
+[2026-04-02 22:17:46] INFO: step= 400 x_mean= -1.0844 x_std=  0.6173 eps_std=  0.9823 eps/x= 1.59130 x0_mean= -1.3476 x0_std=  0.1987
+[2026-04-02 22:17:47] INFO: step= 300 x_mean= -1.1997 x_std=  0.5075 eps_std=  0.9768 eps/x= 1.92482 x0_mean= -1.3579 x0_std=  0.1705
+[2026-04-02 22:17:48] INFO: step= 200 x_mean= -1.2793 x_std=  0.3728 eps_std=  0.9516 eps/x= 2.55262 x0_mean= -1.3569 x0_std=  0.1501
+[2026-04-02 22:17:49] INFO: step= 100 x_mean= -1.3424 x_std=  0.2457 eps_std=  0.9404 eps/x= 3.82746 x0_mean= -1.3690 x0_std=  0.1438
+[2026-04-02 22:17:50] INFO: step=   9 x_mean= -1.3758 x_std=  0.1313 eps_std=  0.8423 eps/x= 6.41636 x0_mean= -1.3776 x0_std=  0.1253
+[2026-04-02 22:17:50] INFO: step=   8 x_mean= -1.3761 x_std=  0.1304 eps_std=  0.8372 eps/x= 6.42049 x0_mean= -1.3777 x0_std=  0.1252
+[2026-04-02 22:17:50] INFO: step=   7 x_mean= -1.3763 x_std=  0.1297 eps_std=  0.8272 eps/x= 6.37682 x0_mean= -1.3777 x0_std=  0.1252
+[2026-04-02 22:17:50] INFO: step=   6 x_mean= -1.3765 x_std=  0.1291 eps_std=  0.8182 eps/x= 6.33832 x0_mean= -1.3777 x0_std=  0.1253
+[2026-04-02 22:17:50] INFO: step=   5 x_mean= -1.3768 x_std=  0.1283 eps_std=  0.8133 eps/x= 6.33653 x0_mean= -1.3779 x0_std=  0.1252
+[2026-04-02 22:17:50] INFO: step=   4 x_mean= -1.3771 x_std=  0.1275 eps_std=  0.7986 eps/x= 6.26300 x0_mean= -1.3780 x0_std=  0.1250
+[2026-04-02 22:17:50] INFO: step=   3 x_mean= -1.3773 x_std=  0.1268 eps_std=  0.7820 eps/x= 6.16788 x0_mean= -1.3781 x0_std=  0.1248
+[2026-04-02 22:17:50] INFO: step=   2 x_mean= -1.3776 x_std=  0.1261 eps_std=  0.7651 eps/x= 6.06947 x0_mean= -1.3782 x0_std=  0.1247
+[2026-04-02 22:17:50] INFO: step=   1 x_mean= -1.3780 x_std=  0.1253 eps_std=  0.7707 eps/x= 6.15159 x0_mean= -1.3784 x0_std=  0.1247
+[2026-04-02 22:17:50] INFO: step=   0 x_mean= -1.3780 x_std=  0.1253 eps_std=  0.4794 eps/x= 3.82692 x0_mean= -1.3780 x0_std=  0.1253
+[2026-04-02 22:17:50] INFO: (32, 32, 3) -1.3780056238174438 0.12525910139083862
+[2026-04-02 22:17:50] INFO: (32, 32, 3) 205.29036458333334 26.629920532652974
+[2026-04-02 22:17:54] INFO: Loaded checkpoint from ./saves/a.pth (weights: unet)
+[2026-04-02 22:17:54] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=3.576279e-07
+[2026-04-02 22:17:55] INFO: step= 900 x_mean= -0.4805 x_std=  0.8547 eps_std=  1.0152 eps/x= 1.18781 x0_mean= -2.7816 x0_std=  1.4065
+[2026-04-02 22:17:56] INFO: step= 800 x_mean= -0.8448 x_std=  0.8196 eps_std=  0.9859 eps/x= 1.20285 x0_mean= -2.5666 x0_std=  0.5443
+[2026-04-02 22:17:57] INFO: step= 700 x_mean= -1.1472 x_std=  0.7729 eps_std=  0.9625 eps/x= 1.24540 x0_mean= -2.4139 x0_std=  0.2946
+[2026-04-02 22:17:58] INFO: step= 600 x_mean= -1.4388 x_std=  0.7326 eps_std=  0.9645 eps/x= 1.31651 x0_mean= -2.3668 x0_std=  0.1841
+[2026-04-02 22:17:59] INFO: step= 500 x_mean= -1.7092 x_std=  0.6518 eps_std=  0.9446 eps/x= 1.44929 x0_mean= -2.3569 x0_std=  0.1325
+[2026-04-02 22:18:00] INFO: step= 400 x_mean= -1.9259 x_std=  0.5727 eps_std=  0.9333 eps/x= 1.62948 x0_mean= -2.3399 x0_std=  0.1116
+[2026-04-02 22:18:01] INFO: step= 300 x_mean= -2.0813 x_std=  0.4792 eps_std=  0.9163 eps/x= 1.91191 x0_mean= -2.3156 x0_std=  0.1189
+[2026-04-02 22:18:02] INFO: step= 200 x_mean= -2.2144 x_std=  0.3677 eps_std=  0.8845 eps/x= 2.40526 x0_mean= -2.3231 x0_std=  0.1256
+[2026-04-02 22:18:03] INFO: step= 100 x_mean= -2.3007 x_std=  0.2376 eps_std=  0.8219 eps/x= 3.45976 x0_mean= -2.3341 x0_std=  0.1243
+[2026-04-02 22:18:04] INFO: step=   9 x_mean= -2.3400 x_std=  0.1185 eps_std=  0.7735 eps/x= 6.52734 x0_mean= -2.3422 x0_std=  0.1073
+[2026-04-02 22:18:04] INFO: step=   8 x_mean= -2.3403 x_std=  0.1170 eps_std=  0.7738 eps/x= 6.61229 x0_mean= -2.3423 x0_std=  0.1068
+[2026-04-02 22:18:04] INFO: step=   7 x_mean= -2.3405 x_std=  0.1156 eps_std=  0.7810 eps/x= 6.75530 x0_mean= -2.3424 x0_std=  0.1063
+[2026-04-02 22:18:04] INFO: step=   6 x_mean= -2.3407 x_std=  0.1139 eps_std=  0.7910 eps/x= 6.94229 x0_mean= -2.3424 x0_std=  0.1056
+[2026-04-02 22:18:04] INFO: step=   5 x_mean= -2.3412 x_std=  0.1122 eps_std=  0.7945 eps/x= 7.07959 x0_mean= -2.3428 x0_std=  0.1049
+[2026-04-02 22:18:04] INFO: step=   4 x_mean= -2.3417 x_std=  0.1105 eps_std=  0.7922 eps/x= 7.16933 x0_mean= -2.3431 x0_std=  0.1043
+[2026-04-02 22:18:04] INFO: step=   3 x_mean= -2.3423 x_std=  0.1085 eps_std=  0.7830 eps/x= 7.21356 x0_mean= -2.3435 x0_std=  0.1035
+[2026-04-02 22:18:04] INFO: step=   2 x_mean= -2.3427 x_std=  0.1064 eps_std=  0.7867 eps/x= 7.39130 x0_mean= -2.3437 x0_std=  0.1026
+[2026-04-02 22:18:04] INFO: step=   1 x_mean= -2.3435 x_std=  0.1036 eps_std=  0.8537 eps/x= 8.23623 x0_mean= -2.3443 x0_std=  0.1011
+[2026-04-02 22:18:04] INFO: step=   0 x_mean= -2.3435 x_std=  0.1036 eps_std=  0.6923 eps/x= 6.67976 x0_mean= -2.3435 x0_std=  0.1036
+[2026-04-02 22:18:04] INFO: (32, 32, 3) -2.3435025215148926 0.10363190621137619
+[2026-04-02 22:18:04] INFO: (32, 32, 3) 85.20247395833333 13.216817495632734

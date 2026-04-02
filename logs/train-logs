@@ -1832,3 +1832,51 @@ batch_size=32 epochs=100 learning_rate=0.0001 device='cuda' data_dir='./data' sa
 [2026-04-02 20:35:52] INFO: Model save at the path: ./saves/a.pth 
 
 
+[2026-04-02 22:18:40] INFO: Config used:
+batch_size=32 epochs=100 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-04-02 22:18:40] INFO: Using device: cuda
+[2026-04-02 22:18:42] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-04-02 22:19:31] INFO: Config used:
+batch_size=32 epochs=100 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-04-02 22:19:31] INFO: Using device: cuda
+[2026-04-02 22:19:43] INFO: Config used:
+batch_size=32 epochs=100 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-04-02 22:19:43] INFO: Using device: cuda
+[2026-04-02 22:19:54] INFO: Config used:
+batch_size=32 epochs=100 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-04-02 22:19:54] INFO: Using device: cuda
+[2026-04-02 22:19:56] INFO: Model save at the path: ./saves/a.pth 
+
+
+[2026-04-02 22:24:59] INFO: Config used:
+batch_size=34 epochs=101 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-04-02 22:24:59] INFO: Using device: cuda
+[2026-04-02 22:24:59] ERROR: [Errno 2] No such file or directory: './saves/a.pth'
+[2026-04-02 22:24:59] INFO: Defaulting to reinit random UNET model
+[2026-04-02 22:25:53] INFO: Config used:
+batch_size=34 epochs=101 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-04-02 22:25:53] INFO: Using device: cuda
+[2026-04-02 22:25:53] ERROR: [Errno 2] No such file or directory: './saves/a.pth'
+[2026-04-02 22:25:53] INFO: Defaulting to reinit random UNET model
+[2026-04-02 22:26:23] INFO: Config used:
+batch_size=34 epochs=101 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-04-02 22:26:23] INFO: Using device: cuda
+[2026-04-02 22:26:24] ERROR: [Errno 2] No such file or directory: './saves/a.pth'
+[2026-04-02 22:26:24] INFO: Defaulting to reinit random UNET model
+[2026-04-02 22:28:16] INFO: Config used:
+batch_size=34 epochs=101 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-04-02 22:28:16] INFO: Using device: cuda
+[2026-04-02 22:28:16] ERROR: [Errno 2] No such file or directory: './saves/a.pth'
+[2026-04-02 22:28:16] INFO: Defaulting to reinit random UNET model
+[2026-04-02 22:29:46] INFO: Config used:
+batch_size=34 epochs=101 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-04-02 22:29:46] INFO: Using device: cuda
+[2026-04-02 22:29:47] ERROR: [Errno 2] No such file or directory: './saves/a.pth'
+[2026-04-02 22:29:47] INFO: Defaulting to reinit random UNET model
+[2026-04-02 22:31:10] INFO: Config used:
+batch_size=34 epochs=101 learning_rate=0.0001 device='cuda' data_dir='./data' save_path='./saves' num_workers=4 logs='./logs/train-logs'
+[2026-04-02 22:31:10] INFO: Using device: cuda
+[2026-04-02 22:31:10] ERROR: [Errno 2] No such file or directory: './saves/a.pth'
+[2026-04-02 22:31:10] INFO: Defaulting to reinit random UNET model

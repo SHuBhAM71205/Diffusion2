@@ -68,10 +68,10 @@ def train(config: Config):
                     transform=trans
                 )
 
-    
+    # print(batch_size)
     dataloader = DataLoader(
         dataset,
-        batch_size,
+        batch_size=batch_size,
         shuffle=True,
         num_workers=train_cfg.num_workers,
         pin_memory=True,
@@ -120,9 +120,9 @@ def train(config: Config):
                 x_t, eps = diffusion.add_noise(x, timestamp)
             
             alpha_t = diffusion.alpha[timestamp]
-            sqrt_alpha_t = torch.sqrt(alpha_t)
-            sqrt_one_minus_alpha_t = torch.sqrt(1 - alpha_t)
-
+            sqrt_alpha_t = torch.sqrt(alpha_t).view(-1, 1, 1, 1)
+            sqrt_one_minus_alpha_t = torch.sqrt(1 - alpha_t).view(-1, 1, 1, 1)
+    
             v = sqrt_alpha_t * eps - sqrt_one_minus_alpha_t * x
             
             predict_eps = unet(x_t, timestamp)
