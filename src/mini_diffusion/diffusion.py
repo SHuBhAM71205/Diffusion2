@@ -28,7 +28,6 @@ class Diffusion(nn.Module):
         self.register_buffer("beta", beta)
         self.register_buffer("alpha", alpha)
         self.register_buffer("alpha_hat", alpha_hat)
-        print(alpha.shape, beta.shape, alpha_hat.shape)
 
     def sample_time_stamp(self, batch_size):
 

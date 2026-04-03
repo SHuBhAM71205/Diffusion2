@@ -30,7 +30,7 @@ class DownBlock(nn.Module):
     3. Downsample using 2x2 average pooling
     """
     def __init__(self, in_channels, out_channels, t_emb_dim,
-                 down_sample=True, num_heads=4, num_layers=1):
+                down_sample=True, num_heads=4, num_layers=1):
         super().__init__()
         self.num_layers = num_layers
         self.down_sample = down_sample
@@ -40,7 +40,7 @@ class DownBlock(nn.Module):
                     nn.GroupNorm(8, in_channels if i == 0 else out_channels),
                     nn.SiLU(),
                     nn.Conv2d(in_channels if i == 0 else out_channels, out_channels,
-                              kernel_size=3, stride=1, padding=1),
+                            kernel_size=3, stride=1, padding=1),
                 )
                 for i in range(num_layers)
             ]
@@ -88,17 +88,22 @@ class DownBlock(nn.Module):
             # Resnet block of Unet
             resnet_input = out
             out = self.resnet_conv_first[i](out)
-            out = out + self.t_emb_layers[i](t_emb)[:, :, None, None]
+            out = out + 0.9*self.t_emb_layers[i](t_emb)[:, :, None, None]
             out = self.resnet_conv_second[i](out)
             out = out + self.residual_input_conv[i](resnet_input)
             
             # Attention block of Unet
             batch_size, channels, h, w = out.shape
-            in_attn = out.reshape(batch_size, channels, h * w)
-            in_attn = self.attention_norms[i](in_attn)
-            in_attn = in_attn.transpose(1, 2)
+
+            normed = self.attention_norms[i](out)
+
+            # then reshape
+            in_attn = normed.reshape(batch_size, channels, h * w).transpose(1, 2)
+
             out_attn, _ = self.attentions[i](in_attn, in_attn, in_attn)
+
             out_attn = out_attn.transpose(1, 2).reshape(batch_size, channels, h, w)
+
             out = out + out_attn
             
         out = self.down_sample_conv(out)
@@ -175,11 +180,15 @@ class MidBlock(nn.Module):
             
             # Attention Block
             batch_size, channels, h, w = out.shape
-            in_attn = out.reshape(batch_size, channels, h * w)
-            in_attn = self.attention_norms[i](in_attn)
-            in_attn = in_attn.transpose(1, 2)
+
+            normed = self.attention_norms[i](out)
+
+            in_attn = normed.reshape(batch_size, channels, h * w).transpose(1, 2)
+
             out_attn, _ = self.attentions[i](in_attn, in_attn, in_attn)
+
             out_attn = out_attn.transpose(1, 2).reshape(batch_size, channels, h, w)
+
             out = out + out_attn
             
             # Resnet Block
@@ -265,7 +274,7 @@ class UpBlock(nn.Module):
         for i in range(self.num_layers):
             resnet_input = out
             out = self.resnet_conv_first[i](out)
-            out = out + self.t_emb_layers[i](t_emb)[:, :, None, None]
+            out = out + 0.9 *self.t_emb_layers[i](t_emb)[:, :, None, None]
             out = self.resnet_conv_second[i](out)
             out = out + self.residual_input_conv[i](resnet_input)
             

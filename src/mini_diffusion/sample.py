@@ -13,7 +13,7 @@ import io
 
 from Logger.logger import setup_logger
 
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 
 def _format_step_stats(
@@ -51,7 +51,8 @@ def sample(config:Config| None = None):
     try:
         chkpt = torch.load(model_path, map_location=device)
 
-        state_dict_key = "unet" if "unet" in chkpt else "ema_unet"
+        # state_dict_key = "unet" if "unet" in chkpt else "ema_unet"
+        state_dict_key ="ema_unet"
         print(f"state_dct_key{state_dict_key}")
         unet.load_state_dict(chkpt[state_dict_key])
         unet = unet.to(device)
@@ -71,7 +72,7 @@ def sample(config:Config| None = None):
         cnt += parameter.numel()
         
     print(f"Total parameters in UNET: {cnt}")
-    alpha_hat_from_alpha = torch.cumprod(diffusion.alpha, dim=0)
+    alpha_hat_from_alpha = torch.cumprod(diffusion.alpha, dim=0) #type: ignore
     schedule_consistency = (alpha_hat_from_alpha - diffusion.alpha_hat).abs().max().item()
     logger.info(
         f"Schedule consistency max|cumprod(alpha)-alpha_hat|={schedule_consistency:.6e}"
@@ -82,62 +83,55 @@ def sample(config:Config| None = None):
     with torch.inference_mode() , torch.no_grad():
         x_t = torch.randn(size=(1,3,img_dim,img_dim)).to(device)
         
-        # n_plots = 10 
-        # steps_to_plot = torch.linspace(config.diffusion.timesteps - 1, 0, n_plots, dtype=torch.long)
+        n_plots = 10 
+        steps_to_plot = torch.linspace(config.diffusion.timesteps - 1, 0, n_plots, dtype=torch.long)
         
-        # cols = 5
-        # rows = math.ceil(n_plots / cols)
-        # fig, axes = plt.subplots(rows, cols, figsize=(15, 3 * rows))
-        # axes = axes.flatten()
-        # plot_idx = 0
-        
+        cols = 5
+        rows = math.ceil(n_plots / cols)
+        fig, axes = plt.subplots(rows, cols, figsize=(15, 3 * rows))
+        axes = axes.flatten()
+        plot_idx = 0
+
         for i in reversed(range(config.diffusion.timesteps)):
             t = torch.full((x_t.size(0),), i, device=device, dtype=torch.long)
 
             v = unet(x_t, t)
-            alpha_t = diffusion.alpha_hat[i]
-            sqrt_alpha_t = torch.sqrt(alpha_t)
-            sqrt_one_minus_alpha_t = torch.sqrt(1 - alpha_t)
 
-            eps = sqrt_alpha_t * v + sqrt_one_minus_alpha_t * x_t
-            
-            alpha_t = diffusion.alpha[i]
             alpha_hat_t = diffusion.alpha_hat[i]
+            alpha_t = diffusion.alpha[i]
             beta_t = diffusion.beta[i]
 
-            # compute coefficient
+            # v → eps
+            eps = torch.sqrt(alpha_hat_t) * v + torch.sqrt(1 - alpha_hat_t) * x_t
+
             coef = beta_t / torch.sqrt(1 - alpha_hat_t)
 
-            # mean of reverse distribution
             mean = (x_t - coef * eps) / torch.sqrt(alpha_t)
 
             if i > 0:
                 alpha_hat_prev = diffusion.alpha_hat[i-1]
-
-                posterior_var = beta_t * (1 - alpha_hat_prev) / (1 - alpha_hat_t)
-
+                posterior_var = beta_t * ((1 - alpha_hat_prev) / (1 - alpha_hat_t))
                 noise = torch.randn_like(x_t)
-
                 x_t = mean + torch.sqrt(posterior_var) * noise
             else:
                 x_t = (x_t - torch.sqrt(1 - alpha_hat_t) * eps) / torch.sqrt(alpha_hat_t)
-
-            x0_hat = (x_t - torch.sqrt(1 - alpha_hat_t) * eps) / torch.sqrt(alpha_hat_t)
-            if i % 100 == 0 or i < 10:
-                logger.info(_format_step_stats(i, x_t, eps, x0_hat))
-            
-            
-            # if i in steps_to_plot:
-            #     img = x_t[0].permute(1,2,0).cpu().numpy()
-        
-            #     img = (img * 0.5 ) + 0.5
                 
-            #     img = (img * 255).astype(np.uint8)    
-            #     ax = axes[plot_idx]
-            #     ax.imshow(img)
-            #     ax.set_title(f"T = {i}")
-            #     ax.axis('off')
-            #     plot_idx += 1
+            # x0_hat = (x_t - torch.sqrt(1 - alpha_hat_t) * eps) / torch.sqrt(alpha_hat_t)
+            # if i % 100 == 0 or i < 10:
+            #     logger.info(_format_step_stats(i, x_t, eps, x0_hat))
+            
+            
+            if i in steps_to_plot:
+                img = x_t[0].permute(1,2,0).cpu().numpy()
+        
+                img = (img * 0.5 ) + 0.5
+                
+                img = (img * 255).astype(np.uint8)    
+                ax = axes[plot_idx]
+                ax.imshow(img)
+                ax.set_title(f"T = {i}")
+                ax.axis('off')
+                plot_idx += 1
                 
             # print(
             #     f"Step {i}: mean={x_t.mean():.4f}, std={x_t.std():.4f} "
@@ -148,7 +142,7 @@ def sample(config:Config| None = None):
 
         logger.info(f"{img.shape} {img.mean()} {img.std()}")
         
-        # plt.show()
+        plt.show()
         img = x_t[0].permute(1,2,0).cpu().numpy()
         
         img = (img * 0.5 ) + 0.5

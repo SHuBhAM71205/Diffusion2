@@ -119,7 +119,7 @@ def train(config: Config):
 
                 x_t, eps = diffusion.add_noise(x, timestamp)
             
-            alpha_t = diffusion.alpha_hat[timestamp]
+            alpha_t = diffusion.alpha_hat[timestamp] #type: ignore
             sqrt_alpha_t = torch.sqrt(alpha_t).view(-1, 1, 1, 1)
             sqrt_one_minus_alpha_t = torch.sqrt(1 - alpha_t).view(-1, 1, 1, 1)
     
@@ -127,8 +127,8 @@ def train(config: Config):
             
             predict_eps = unet(x_t, timestamp)
 
-            loss = loss_fn(v, predict_eps)
-
+            loss = loss_fn(predict_eps, eps)
+            
             losses.append(loss.item())
 
             loss.backward()
