@@ -95,14 +95,14 @@ def sample(config:Config| None = None):
         for i in reversed(range(config.diffusion.timesteps)):
             t = torch.full((x_t.size(0),), i, device=device, dtype=torch.long)
 
-            v = unet(x_t, t)
+            eps = unet(x_t, t)
 
             alpha_hat_t = diffusion.alpha_hat[i]
             alpha_t = diffusion.alpha[i]
             beta_t = diffusion.beta[i]
 
             # v → eps
-            eps = torch.sqrt(alpha_hat_t) * v + torch.sqrt(1 - alpha_hat_t) * x_t
+            # eps = torch.sqrt(alpha_hat_t) * v + torch.sqrt(1 - alpha_hat_t) * x_t
 
             coef = beta_t / torch.sqrt(1 - alpha_hat_t)
 
@@ -142,7 +142,7 @@ def sample(config:Config| None = None):
 
         logger.info(f"{img.shape} {img.mean()} {img.std()}")
         
-        plt.show()
+        plt.savefig("./temp.png")
         img = x_t[0].permute(1,2,0).cpu().numpy()
         
         img = (img * 0.5 ) + 0.5
