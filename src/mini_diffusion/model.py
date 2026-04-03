@@ -88,7 +88,7 @@ class DownBlock(nn.Module):
             # Resnet block of Unet
             resnet_input = out
             out = self.resnet_conv_first[i](out)
-            out = out + 0.9*self.t_emb_layers[i](t_emb)[:, :, None, None]
+            out = out + 0.5*self.t_emb_layers[i](t_emb)[:, :, None, None]
             out = self.resnet_conv_second[i](out)
             out = out + self.residual_input_conv[i](resnet_input)
             
@@ -172,7 +172,7 @@ class MidBlock(nn.Module):
         # First resnet block
         resnet_input = out
         out = self.resnet_conv_first[0](out)
-        out = out + self.t_emb_layers[0](t_emb)[:, :, None, None]
+        out = out + 0.5*self.t_emb_layers[0](t_emb)[:, :, None, None]
         out = self.resnet_conv_second[0](out)
         out = out + self.residual_input_conv[0](resnet_input)
         
@@ -274,7 +274,7 @@ class UpBlock(nn.Module):
         for i in range(self.num_layers):
             resnet_input = out
             out = self.resnet_conv_first[i](out)
-            out = out + 0.9 *self.t_emb_layers[i](t_emb)[:, :, None, None]
+            out = out + 0.5 *self.t_emb_layers[i](t_emb)[:, :, None, None]
             out = self.resnet_conv_second[i](out)
             out = out + self.residual_input_conv[i](resnet_input)
             

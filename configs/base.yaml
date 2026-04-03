@@ -1,5 +1,5 @@
 diffusion:
-  timesteps: 1000
+  timesteps: 500
   beta_start: 0.0001
   beta_end: 0.02
 
