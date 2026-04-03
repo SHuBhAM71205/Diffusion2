@@ -95,7 +95,7 @@ def sample(config:Config| None = None):
             t = torch.full((x_t.size(0),), i, device=device, dtype=torch.long)
 
             v = unet(x_t, t)
-            alpha_t = diffusion.alpha[i]
+            alpha_t = diffusion.alpha_hat[i]
             sqrt_alpha_t = torch.sqrt(alpha_t)
             sqrt_one_minus_alpha_t = torch.sqrt(1 - alpha_t)
 

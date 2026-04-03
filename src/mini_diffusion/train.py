@@ -119,7 +119,7 @@ def train(config: Config):
 
                 x_t, eps = diffusion.add_noise(x, timestamp)
             
-            alpha_t = diffusion.alpha[timestamp]
+            alpha_t = diffusion.alpha_hat[timestamp]
             sqrt_alpha_t = torch.sqrt(alpha_t).view(-1, 1, 1, 1)
             sqrt_one_minus_alpha_t = torch.sqrt(1 - alpha_t).view(-1, 1, 1, 1)
     
