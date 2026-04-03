@@ -31,7 +31,7 @@ class Diffusion(nn.Module):
 
     def sample_time_stamp(self, batch_size):
 
-        return torch.randint(0, self.config.timesteps, size=(batch_size,), device=self.device)
+        return torch.randint(int(0.5*self.config.timesteps), self.config.timesteps, size=(batch_size,), device=self.device)
 
     def add_noise(self, x: torch.Tensor, t):
         # shape if x is = B,Color,T,T
