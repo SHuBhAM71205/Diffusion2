@@ -7190,3 +7190,31 @@
 [2026-04-04 15:12:21] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=0.000000e+00
 [2026-04-04 15:12:26] INFO: (32, 32, 3) 4.038341045379639 14.704550743103027
 [2026-04-04 15:12:26] INFO: (32, 32, 3) 128.73763020833334 74.0608177770186
+[2026-04-04 18:29:20] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 18:29:20] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 18:30:32] INFO: (28, 28) -0.16903170943260193 0.4891120195388794
+[2026-04-04 18:30:32] INFO: (28, 28) 116.59183673469387 61.58873832498228
+[2026-04-04 18:30:38] INFO: Loaded checkpoint from ./saves/a.pth (weights: unet)
+[2026-04-04 18:30:38] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 18:31:34] INFO: (28, 28) -0.08820928633213043 0.5593854188919067
+[2026-04-04 18:31:34] INFO: (28, 28) 125.25892857142857 67.19673405932609
+[2026-04-04 18:32:40] INFO: Loaded checkpoint from ./saves/a.pth (weights: unet)
+[2026-04-04 18:32:40] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 18:33:41] INFO: Loaded checkpoint from ./saves/a.pth (weights: unet)
+[2026-04-04 18:33:41] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 18:34:27] INFO: Loaded checkpoint from ./saves/a.pth (weights: unet)
+[2026-04-04 18:34:27] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 18:36:42] INFO: (28, 28) -0.4293784201145172 0.36315616965293884
+[2026-04-04 18:36:42] INFO: (28, 28) 86.69642857142857 53.10643132869491
+[2026-04-04 18:36:46] INFO: Loaded checkpoint from ./saves/a.pth (weights: unet)
+[2026-04-04 18:36:46] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 18:38:18] INFO: (28, 28) -0.5227767825126648 0.3604009449481964
+[2026-04-04 18:38:18] INFO: (28, 28) 83.63010204081633 60.26906855493441
+[2026-04-04 18:38:28] INFO: Loaded checkpoint from ./saves/a.pth (weights: unet)
+[2026-04-04 18:38:28] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 18:39:47] INFO: (28, 28) -0.20436041057109833 0.5930418968200684
+[2026-04-04 18:39:47] INFO: (28, 28) 110.80484693877551 72.80610205824335
+[2026-04-04 18:39:51] INFO: Loaded checkpoint from ./saves/a.pth (weights: unet)
+[2026-04-04 18:39:51] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 18:49:31] INFO: (28, 28) -0.06316874176263809 0.5765235424041748
+[2026-04-04 18:49:31] INFO: (28, 28) 128.14158163265307 69.8089894330358

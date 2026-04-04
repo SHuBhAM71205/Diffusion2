@@ -81,7 +81,7 @@ def sample(config:Config| None = None):
 
     unet.eval()
     with torch.inference_mode() , torch.no_grad():
-        x_t = torch.randn(size=(1,3,img_dim,img_dim)).to(device)
+        x_t = torch.randn(size=(81,config.model.im_channels,img_dim,img_dim)).to(device)
         
         n_plots = 10 
         steps_to_plot = torch.linspace(config.diffusion.timesteps - 1, 0, n_plots, dtype=torch.long)
@@ -133,7 +133,7 @@ def sample(config:Config| None = None):
             
             
             if i in steps_to_plot:
-                img = x_t[0].permute(1,2,0).cpu().numpy()
+                img = x_t[0].permute(1,2,0).cpu().numpy() if config.model.im_channels == 3 else x_t[0,0].cpu().numpy()
         
                 img = (img * 0.5 ) + 0.5
                 
@@ -148,14 +148,28 @@ def sample(config:Config| None = None):
             #     f"Step {i}: mean={x_t.mean():.4f}, std={x_t.std():.4f} "
             #     f"min={x_t.min()} max = {x_t.max()}"
             # )
-
-        img = x_t[0].permute(1, 2, 0).cpu().numpy()
-
-        logger.info(f"{img.shape} {img.mean()} {img.std()}")
-        
         plt.savefig("./temp.png")
         plt.close()
-        img = x_t[0].permute(1,2,0).cpu().numpy()
+
+        fig,axis = plt.subplots(figsize=(9,9))
+        for i in range(81):
+            img = x_t[i].squeeze(0).cpu().numpy() if config.model.im_channels == 1 else x_t[i].permute(1,2,0).cpu().numpy()
+            img = (img * 0.5 ) + 0.5
+            img = (img * 255).astype(np.uint8)
+            
+            fig.add_subplot(9, 9, i+1)
+            plt.imshow(img, cmap="gray" if config.model.im_channels == 1 else None)
+            plt.axis("off")
+        plt.suptitle("Final Sampled Images")
+        plt.axis("off")
+        
+        plt.savefig("./final_samples.png")
+        plt.show()
+        plt.close()
+        
+        img = x_t[0].permute(1,2,0).cpu().numpy() if config.model.im_channels == 3 else x_t[0,0].cpu().numpy()
+
+        logger.info(f"{img.shape} {img.mean()} {img.std()}")
         
         img = (img * 0.5 ) + 0.5
         
@@ -174,13 +188,13 @@ def sample(config:Config| None = None):
         # plt.plot(diffusion.alpha.cpu().numpy(), label="alpha")
         # plt.plot(diffusion.beta.cpu().numpy(), label="beta")
         
-        plt.xlabel("Time Step")
-        plt.ylabel("Coefficient")
-        plt.title("Schedule Consistency")
-        plt.legend()
-        # plt.savefig("./coefficients.png")
-        plt.show()
-        plt.close()
+        # plt.xlabel("Time Step")
+        # plt.ylabel("Coefficient")
+        # plt.title("Schedule Consistency")
+        # plt.legend()
+        # # plt.savefig("./coefficients.png")
+        # plt.show()
+        # plt.close()
         return buf.getvalue()
         
 if __name__ == "__main__":

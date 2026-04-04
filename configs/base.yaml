@@ -28,8 +28,8 @@ preprocessing:
   save_dir: "./data"
 
 model:
-  im_channels : 3
-  im_size : 32
+  im_channels : 1 #1 for grayscale, 3 for RGB
+  im_size : 28
   down_channels : [64, 128, 256, 512]
   mid_channels : [512, 512, 256]
   down_sample : [True, True, False]

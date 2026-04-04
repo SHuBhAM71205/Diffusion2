@@ -119,10 +119,11 @@ def train(config: Config):
     
     losses = []
     print(epoch_start)
+    # scaler = torch.GradScaler()
     
     i=0
     for epoch in range(epoch_start,epochs):
-        for batch in dataloader:
+        for batch,idx in dataloader:
             optimizer.zero_grad()
             with torch.no_grad():
                 x= batch.to(device)
