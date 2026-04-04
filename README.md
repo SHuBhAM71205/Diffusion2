@@ -2,7 +2,6 @@
 
 A clean, educational implementation of a **diffusion-based generative model** from scratch, featuring training, sampling, and a FastAPI REST API for inference.
 
-Right now Diffusion is not Diffusing
 ---
 
 ## 📋 Table of Contents
@@ -25,6 +24,10 @@ Right now Diffusion is not Diffusing
 # Some Samples
 ![NO IMG](./Samples/15-3-26/result_15-3-26.png)
 ![NO IMG](./Samples/15-3-26/result_2_15-3-26.png)
+
+## FashionMNIST 
+![NO IMG](./Samples/fina_samples_for_FASHIONMNIST.png)
+![NO IMG](./Samples/sample2_FashionMNIST.png)
 
 
 ## ✨ Features
