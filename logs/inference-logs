@@ -7069,3 +7069,124 @@
 [2026-04-03 21:04:12] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=3.576279e-07
 [2026-04-03 21:04:22] INFO: (32, 32, 3) -0.20385245978832245 0.4691690504550934
 [2026-04-03 21:04:36] INFO: (32, 32, 3) 121.3486328125 63.3403854718658
+[2026-04-03 22:11:38] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-03 22:11:38] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-03 22:11:44] INFO: (32, 32, 3) 2.311762809753418 214.32728576660156
+[2026-04-03 22:11:44] INFO: (32, 32, 3) 125.48990885416667 72.20947466573975
+[2026-04-04 14:07:00] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 14:07:01] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 14:07:08] INFO: (32, 32, 3) 130.63255310058594 222.0826416015625
+[2026-04-04 14:07:09] INFO: (32, 32, 3) 126.455078125 74.66242562181783
+[2026-04-04 14:08:42] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 14:08:42] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 14:08:55] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 14:08:55] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 14:09:24] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 14:09:24] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 14:09:44] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 14:09:44] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 14:11:08] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 14:11:08] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 14:11:14] INFO: (32, 32, 3) 113.71807861328125 227.824462890625
+[2026-04-04 14:11:14] INFO: (32, 32, 3) 126.94466145833333 73.83200462127387
+[2026-04-04 14:11:53] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 14:11:53] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 14:11:59] INFO: (32, 32, 3) -82.65819549560547 201.9860382080078
+[2026-04-04 14:11:59] INFO: (32, 32, 3) 126.32421875 73.62295969805987
+[2026-04-04 14:13:18] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 14:13:18] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 14:13:23] INFO: (32, 32, 3) -118.0473861694336 203.15797424316406
+[2026-04-04 14:13:24] INFO: (32, 32, 3) 127.34700520833333 73.87205228108073
+[2026-04-04 14:14:00] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 14:14:00] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 14:14:26] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 14:14:26] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 14:14:32] INFO: (32, 32, 3) 130.6233673095703 231.12042236328125
+[2026-04-04 14:14:32] INFO: (32, 32, 3) 126.9638671875 74.74950135106161
+[2026-04-04 14:14:43] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 14:14:43] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 14:14:48] INFO: (32, 32, 3) -64.4897232055664 224.00160217285156
+[2026-04-04 14:14:48] INFO: (32, 32, 3) 129.609375 74.02516914751163
+[2026-04-04 14:15:00] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 14:15:00] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 14:15:05] INFO: (32, 32, 3) -30.71656608581543 214.2495574951172
+[2026-04-04 14:15:05] INFO: (32, 32, 3) 127.10481770833333 74.51307703124792
+[2026-04-04 14:15:59] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 14:15:59] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 14:16:05] INFO: (32, 32, 3) 51.40517044067383 204.3343048095703
+[2026-04-04 14:16:05] INFO: (32, 32, 3) 127.31022135416667 73.76168551280932
+[2026-04-04 14:16:47] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 14:16:47] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 14:16:53] INFO: (32, 32, 3) 15.169142723083496 236.7767333984375
+[2026-04-04 14:16:53] INFO: (32, 32, 3) 128.21647135416666 73.61374473283047
+[2026-04-04 14:17:49] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 14:17:49] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 14:17:54] INFO: (32, 32, 3) -29.16424560546875 221.5863037109375
+[2026-04-04 14:17:55] INFO: (32, 32, 3) 127.21126302083333 73.84382690233397
+[2026-04-04 14:18:02] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 14:18:02] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 14:18:07] INFO: (32, 32, 3) -38.715824127197266 231.54684448242188
+[2026-04-04 14:18:07] INFO: (32, 32, 3) 127.26041666666667 73.56797289775437
+[2026-04-04 14:20:52] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 14:20:52] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 14:23:49] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 14:23:49] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 14:23:54] INFO: (32, 32, 3) 110.2896728515625 216.1968231201172
+[2026-04-04 14:23:55] INFO: (32, 32, 3) 127.58951822916667 74.08426056572327
+[2026-04-04 14:29:48] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 14:29:48] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 14:29:53] INFO: (32, 32, 3) 152.4423065185547 196.8012237548828
+[2026-04-04 14:29:53] INFO: (32, 32, 3) 128.11360677083334 73.93091631903702
+[2026-04-04 14:45:05] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 14:45:06] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 14:45:11] INFO: (32, 32, 3) 64.94011688232422 222.84689331054688
+[2026-04-04 14:45:11] INFO: (32, 32, 3) 127.77376302083333 74.16377078842757
+[2026-04-04 14:46:32] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 14:46:32] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 14:46:38] INFO: (32, 32, 3) 81.92121124267578 251.1289520263672
+[2026-04-04 14:46:38] INFO: (32, 32, 3) 127.3349609375 74.12402140039477
+[2026-04-04 14:48:33] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 14:48:33] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 14:48:38] INFO: (32, 32, 3) 6.890527248382568 193.4267120361328
+[2026-04-04 14:48:38] INFO: (32, 32, 3) 126.80794270833333 73.33342511431412
+[2026-04-04 14:48:51] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 14:48:51] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 14:48:56] INFO: (32, 32, 3) 62.49399948120117 224.26002502441406
+[2026-04-04 14:48:56] INFO: (32, 32, 3) 128.00911458333334 73.6257466377492
+[2026-04-04 14:50:18] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 14:50:18] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 14:50:23] INFO: (32, 32, 3) 100.427978515625 208.53590393066406
+[2026-04-04 14:50:24] INFO: (32, 32, 3) 125.22981770833333 74.6263167909235
+[2026-04-04 14:51:22] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 14:51:22] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 14:51:28] INFO: (32, 32, 3) 3.8155765533447266 5.202232837677002
+[2026-04-04 14:51:28] INFO: (32, 32, 3) 128.41276041666666 73.6220345942488
+[2026-04-04 14:52:10] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 14:52:10] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 14:52:16] INFO: (32, 32, 3) 80.75243377685547 214.4119873046875
+[2026-04-04 14:52:16] INFO: (32, 32, 3) 126.14778645833333 74.17326216785308
+[2026-04-04 14:54:48] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 14:54:48] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 14:54:54] INFO: (32, 32, 3) 74.36461639404297 223.7803955078125
+[2026-04-04 14:54:54] INFO: (32, 32, 3) 128.73665364583334 73.11074904048137
+[2026-04-04 14:56:08] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 14:56:08] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=2.384186e-07
+[2026-04-04 14:56:13] INFO: (32, 32, 3) 149.00241088867188 229.53778076171875
+[2026-04-04 14:56:13] INFO: (32, 32, 3) 127.25390625 72.82710411732853
+[2026-04-04 15:00:36] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 15:01:41] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 15:01:41] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=3.117412e-03
+[2026-04-04 15:01:46] INFO: (32, 32, 3) -167247.84375 8404592.0
+[2026-04-04 15:01:46] INFO: (32, 32, 3) 90.2255859375 74.61073606730893
+[2026-04-04 15:05:53] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 15:05:53] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=0.000000e+00
+[2026-04-04 15:05:58] INFO: (32, 32, 3) -1.1221659183502197 13.668130874633789
+[2026-04-04 15:05:58] INFO: (32, 32, 3) 127.3974609375 73.72697755988415
+[2026-04-04 15:08:19] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 15:08:19] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=0.000000e+00
+[2026-04-04 15:08:25] INFO: (32, 32, 3) 5.818018436431885 13.59238052368164
+[2026-04-04 15:08:25] INFO: (32, 32, 3) 126.8916015625 73.38603450026838
+[2026-04-04 15:12:21] INFO: Loaded checkpoint from ./saves/a.pth (weights: ema_unet)
+[2026-04-04 15:12:21] INFO: Schedule consistency max|cumprod(alpha)-alpha_hat|=0.000000e+00
+[2026-04-04 15:12:26] INFO: (32, 32, 3) 4.038341045379639 14.704550743103027
+[2026-04-04 15:12:26] INFO: (32, 32, 3) 128.73763020833334 74.0608177770186

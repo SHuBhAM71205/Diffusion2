@@ -9,13 +9,14 @@ from mini_diffusion.model import UNet
 from mini_diffusion.diffusion import Diffusion
 from mini_diffusion.device import resolve_device
 
+from torchvision.datasets import FashionMNIST
 import argparse
 
 from Logger.logger import setup_logger
 
 from torch.utils.data import DataLoader
 
-from Dataset.plane import Plane
+# from Dataset.plane import Plane
 
 
 # import matplotlib.pyplot as plt
@@ -60,14 +61,25 @@ def train(config: Config):
     #     dataset) if label == 5]  # type:ignore
     # airplane_dataset = Subset(dataset, airplane_indices)
 
-    dataset = Plane(
-                    train_cfg.data_dir,
-                    channel=3,
-                    width=config.model.im_size,
-                    height=config.model.im_size,
-                    transform=trans
-                )
+    # dataset = Plane(
+    #                 train_cfg.data_dir,
+    #                 channel=3,
+    #                 width=config.model.im_size,
+    #                 height=config.model.im_size,
+    #                 transform=trans
+    #             )
 
+    dataset = FashionMNIST(
+        root=f"{train_cfg.data_dir}",
+        download=True,
+        transform=transform.Compose(
+            [
+                transform.Resize((config.model.im_size, config.model.im_size)),
+                transform.ToTensor(),
+                transform.Normalize((0.5,), (0.5,))
+            ]
+        )
+    )
     # print(batch_size)
     dataloader = DataLoader(
         dataset,

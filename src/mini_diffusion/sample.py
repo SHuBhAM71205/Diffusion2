@@ -92,14 +92,15 @@ def sample(config:Config| None = None):
         axes = axes.flatten()
         plot_idx = 0
 
-        coeff_hist = []
-        err_hist = []
-        coeff_err_hist = []
+        # coeff_hist = []
+        # err_hist = []
+        # coeff_err_hist = []
+        # delta_hist = []
         for i in reversed(range(config.diffusion.timesteps)):
             t = torch.full((x_t.size(0),), i, device=device, dtype=torch.long)
 
             eps = unet(x_t, t)
-            err_hist.append(eps.abs().mean().item())
+            # err_hist.append(eps.abs().mean().item())
             
             
             alpha_hat_t = diffusion.alpha_hat[i]
@@ -110,16 +111,19 @@ def sample(config:Config| None = None):
             # eps = torch.sqrt(alpha_hat_t) * v + torch.sqrt(1 - alpha_hat_t) * x_t
 
             coef = beta_t / torch.sqrt(1 - alpha_hat_t)
-            coeff_hist.append(coef.item())
+            # coeff_hist.append(coef.item())
             mean = (x_t - coef * eps) / torch.sqrt(alpha_t)
 
+            # delta = (mean - x_t).abs().mean().item()
+            # delta_hist.append(delta)
+            
             if i > 0:
                 alpha_hat_prev = diffusion.alpha_hat[i-1]
                 posterior_var = beta_t * ((1 - alpha_hat_prev) / (1 - alpha_hat_t))
                 
                 noise = torch.randn_like(x_t)
                 x_t = mean + torch.sqrt(posterior_var) * noise
-                coeff_err_hist.append((coef * eps).mean().abs().item())
+                # coeff_err_hist.append((coef * eps/alpha_t).mean().abs().item())
             else:
                 x_t = (x_t - torch.sqrt(1 - alpha_hat_t) * eps) / torch.sqrt(alpha_hat_t)
                 
@@ -163,9 +167,13 @@ def sample(config:Config| None = None):
         pil_image.save(buf, format="PNG")
         buf.seek(0)
         
-        plt.plot(err_hist, label="eps mean")
-        plt.plot(coeff_hist, label="beta/sqrt(1-alpha_hat)")
-        plt.plot(coeff_err_hist, label="coef * eps abs")
+        # plt.plot(err_hist, label="eps mean")
+        # plt.plot(coeff_hist, label="beta/sqrt(1-alpha_hat)")
+        # plt.plot(delta_hist, label="delta") 
+        # plt.plot(torch.sqrt(1-diffusion.alpha_hat).cpu().numpy(), label="alpha_hat")
+        # plt.plot(diffusion.alpha.cpu().numpy(), label="alpha")
+        # plt.plot(diffusion.beta.cpu().numpy(), label="beta")
+        
         plt.xlabel("Time Step")
         plt.ylabel("Coefficient")
         plt.title("Schedule Consistency")
